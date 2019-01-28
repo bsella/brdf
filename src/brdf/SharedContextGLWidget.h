@@ -47,10 +47,10 @@ infringement.
 #define _SHARED_CONTEXT_GL_WIDGET_H
 
 #ifndef OPENGL_MAJOR_VERSION
-  #define OPENGL_MAJOR_VERSION 4
+  #define OPENGL_MAJOR_VERSION 3
 #endif
 #ifndef OPENGL_MINOR_VERSION
-  #define OPENGL_MINOR_VERSION 1
+  #define OPENGL_MINOR_VERSION 3
 #endif
 
 #define OPENGL_CORE_FUNCS_HELPER2(a, b) QOpenGLFunctions_##a##_##b##_Core

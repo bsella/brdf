@@ -1,6 +1,6 @@
 // from http://github.prideout.net/strings-inside-vertex-buffers/
 
-#version 410
+#version 330
 
 layout(points) in;
 layout(triangle_strip, max_vertices = 4) out;

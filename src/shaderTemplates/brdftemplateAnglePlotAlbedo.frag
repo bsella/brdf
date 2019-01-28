@@ -43,7 +43,7 @@ implied warranties of merchantability, fitness for a particular purpose and non-
 infringement.
 */
 
-#version 410
+#version 330
 
 uniform vec3 drawColor;
 in vec4 albedoData;
