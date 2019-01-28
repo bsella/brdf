@@ -7,6 +7,7 @@ digraph "brdf" {
   subgraph clusterdir_2aab34440b9900053a26f1745da5dd21 {
     graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_2aab34440b9900053a26f1745da5dd21.html"];
     dir_2aab34440b9900053a26f1745da5dd21 [shape=plaintext label="brdf"];
+    dir_d6434d9f0c1619711a7affc6149e2d0b [shape=box label="BRDF3000" color="red" fillcolor="white" style="filled" URL="dir_d6434d9f0c1619711a7affc6149e2d0b.html"];
     dir_3cb6b6b60e61da7f21733696e20cce7b [shape=box label="src" color="red" fillcolor="white" style="filled" URL="dir_3cb6b6b60e61da7f21733696e20cce7b.html"];
   }
   }
