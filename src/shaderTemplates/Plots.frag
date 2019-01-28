@@ -1,4 +1,4 @@
-#version 410
+#version 330
 
 uniform float thickness;
 const float antialias = 5.0;

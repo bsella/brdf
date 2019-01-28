@@ -49,6 +49,8 @@ infringement.
 #include <QWidget>
 #include <vector>
 #include "BRDFBase.h"
+#include "ChefDevr/BRDFReconstructionModel.h"
+#include "ChefDevr/BRDFMapScene.h"
 
 class QSlider;
 class QLabel;
@@ -62,6 +64,9 @@ class QComboBox;
 class ParameterGroupWidget;
 class QFileDialog;
 
+/**
+ * @file ParameterWindow.h
+ */
 
 
 class ParameterWindow : public QWidget
@@ -88,7 +93,12 @@ signals:
 public slots:
      
     void openBRDFFromFile();
-
+    
+    /**
+     * @brief Opens the map widget that allows choosing a BRDF from latent space coordinates
+     */
+    void openBRDFFromMap();
+    
     void emitIncidentDirectionChanged();
     void emitGraphParametersChanged();
     void emitBRDFListChanged();
@@ -117,6 +127,9 @@ private:
     
     QFrame* spaceFiller;
     
+    /** @brief Pointer to the map widget that allows choosing a BRDF from latent space coordinates */
+    BRDFMapScene* brdfMapScene;
+    
     float theta, phi;
     bool useLogPlot;
     bool useNDotL;
@@ -125,6 +138,8 @@ private:
     bool soloBRDFUsesColors;
 
     QFileDialog* fileDialog;
+
+    BRDFReconstructionModel brdfModel;
 };
 
 #endif
