@@ -1,11 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "_abcdefghiklmnoprstuxz~",
+  0: "_abcdefghiklmnoprstuvxz~",
   1: "bp",
   2: "c",
-  3: "bp",
+  3: "bpt",
   4: "abcdeghikmoprs~",
-  5: "_bcdfiklmnpstuxz"
+  5: "_bcdfiklmnpstuxz",
+  6: "mrv",
+  7: "elm"
 };
 
 var indexSectionNames =
@@ -15,7 +17,9 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "variables"
+  5: "variables",
+  6: "typedefs",
+  7: "defines"
 };
 
 var indexSectionLabels =
@@ -25,6 +29,8 @@ var indexSectionLabels =
   2: "Namespaces",
   3: "Files",
   4: "Functions",
-  5: "Variables"
+  5: "Variables",
+  6: "Typedefs",
+  7: "Macros"
 };
 
