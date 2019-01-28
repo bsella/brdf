@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logplotcheckbox',['logPlotCheckbox',['../class_parameter_window.html#a344b04e741cc28f246edf46cd4d702dd',1,'ParameterWindow']]]
+  ['dim',['dim',['../class_chef_devr_1_1_b_r_d_f_reconstruction_model.html#acd89435d67fb297739912752b62225c2',1,'ChefDevr::BRDFReconstructionModel']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['emitbrdflistchanged',['emitBRDFListChanged',['../class_parameter_window.html#a21fcbeb9c757978a3bc477d10337cbfe',1,'ParameterWindow']]],
-  ['emitgraphparameterschanged',['emitGraphParametersChanged',['../class_parameter_window.html#a6210b8881ee762042779f50c70236bef',1,'ParameterWindow']]],
-  ['emitincidentdirectionchanged',['emitIncidentDirectionChanged',['../class_parameter_window.html#ae27de4780e303ea24b11c0a89160c429',1,'ParameterWindow']]]
+  ['drawbackground',['drawBackground',['../class_chef_devr_1_1_b_r_d_f_map_scene.html#a133b2ec883a34a5bf02b08abc22ea401',1,'ChefDevr::BRDFMapScene']]],
+  ['drawforeground',['drawForeground',['../class_chef_devr_1_1_b_r_d_f_map_scene.html#ae757660c0c92f9a0776f9a01340c5334',1,'ChefDevr::BRDFMapScene']]]
 ];

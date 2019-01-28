@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['brdflistchanged',['brdfListChanged',['../class_parameter_window.html#a94cd5fb5725d7d12a5c7c541053a01f5',1,'ParameterWindow']]]
+  ['addbrdfwidget',['addBRDFWidget',['../class_parameter_window.html#a35695865727e2848319166c361677981',1,'ParameterWindow']]],
+  ['addpoint',['addPoint',['../class_chef_devr_1_1_b_r_d_f_map_scene.html#a220a81cc3661dd6f04b0cce50f6c15e5',1,'ChefDevr::BRDFMapScene']]]
 ];

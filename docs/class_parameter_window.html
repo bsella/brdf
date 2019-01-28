@@ -116,6 +116,9 @@ $(document).ready(function(){initNavTree('class_parameter_window.html','');});
 Public Slots</h2></td></tr>
 <tr class="memitem:a69362468782f0eb3379dd2579ed2f7f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a69362468782f0eb3379dd2579ed2f7f6">openBRDFFromFile</a> ()</td></tr>
 <tr class="separator:a69362468782f0eb3379dd2579ed2f7f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07040bf3d38dbc6d4c2141b486e571ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a07040bf3d38dbc6d4c2141b486e571ed">openBRDFFromMap</a> ()</td></tr>
+<tr class="memdesc:a07040bf3d38dbc6d4c2141b486e571ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the map widget that allows choosing a BRDF from latent space coordinates.  <a href="#a07040bf3d38dbc6d4c2141b486e571ed">More...</a><br /></td></tr>
+<tr class="separator:a07040bf3d38dbc6d4c2141b486e571ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae27de4780e303ea24b11c0a89160c429"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#ae27de4780e303ea24b11c0a89160c429">emitIncidentDirectionChanged</a> ()</td></tr>
 <tr class="separator:ae27de4780e303ea24b11c0a89160c429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6210b8881ee762042779f50c70236bef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a6210b8881ee762042779f50c70236bef">emitGraphParametersChanged</a> ()</td></tr>
@@ -185,6 +188,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ab8373d1c64795c7e252234bf68c65432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dd5535d3098abed057ffb2164cc1713"><td class="memItemLeft" align="right" valign="top">QFrame *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a4dd5535d3098abed057ffb2164cc1713">spaceFiller</a></td></tr>
 <tr class="separator:a4dd5535d3098abed057ffb2164cc1713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7146f37b49c69560161483202c8740f"><td class="memItemLeft" align="right" valign="top">BRDFMapScene *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#aa7146f37b49c69560161483202c8740f">brdfMapScene</a></td></tr>
+<tr class="memdesc:aa7146f37b49c69560161483202c8740f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the map widget that allows choosing a BRDF from latent space coordinates.  <a href="#aa7146f37b49c69560161483202c8740f">More...</a><br /></td></tr>
+<tr class="separator:aa7146f37b49c69560161483202c8740f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73d2c1887b21a43f775278b7f547b347"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a73d2c1887b21a43f775278b7f547b347">theta</a></td></tr>
 <tr class="separator:a73d2c1887b21a43f775278b7f547b347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9ec7132117cabcaeb6baf5478abaf76"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#ae9ec7132117cabcaeb6baf5478abaf76">phi</a></td></tr>
@@ -199,6 +205,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5c05a4418a024c0eaf22941ef65d225a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d5e07e3c9faf784ecc4e0e052974d48"><td class="memItemLeft" align="right" valign="top">QFileDialog *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a0d5e07e3c9faf784ecc4e0e052974d48">fileDialog</a></td></tr>
 <tr class="separator:a0d5e07e3c9faf784ecc4e0e052974d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a970266a53858d28fbaa6b2d61bd21e99"><td class="memItemLeft" align="right" valign="top">BRDFReconstructionModel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a970266a53858d28fbaa6b2d61bd21e99">brdfModel</a></td></tr>
+<tr class="separator:a970266a53858d28fbaa6b2d61bd21e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a95da188be6f3af06732764ea6f074e57"></a>
@@ -584,6 +592,33 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a07040bf3d38dbc6d4c2141b486e571ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07040bf3d38dbc6d4c2141b486e571ed">&#9670;&nbsp;</a></span>openBRDFFromMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ParameterWindow::openBRDFFromMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Opens the map widget that allows choosing a BRDF from latent space coordinates. </p>
+
+</div>
+</div>
 <a id="a44a057feb7b57d6b28e3ed57e0af2fca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a44a057feb7b57d6b28e3ed57e0af2fca">&#9670;&nbsp;</a></span>redraw</h2>
 
@@ -763,6 +798,52 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa7146f37b49c69560161483202c8740f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7146f37b49c69560161483202c8740f">&#9670;&nbsp;</a></span>brdfMapScene</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BRDFMapScene* ParameterWindow::brdfMapScene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointer to the map widget that allows choosing a BRDF from latent space coordinates. </p>
+
+</div>
+</div>
+<a id="a970266a53858d28fbaa6b2d61bd21e99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a970266a53858d28fbaa6b2d61bd21e99">&#9670;&nbsp;</a></span>brdfModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BRDFReconstructionModel ParameterWindow::brdfModel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8fbdc6adc6bf6797c526f206309b6282"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fbdc6adc6bf6797c526f206309b6282">&#9670;&nbsp;</a></span>channelComboBox</h2>
 

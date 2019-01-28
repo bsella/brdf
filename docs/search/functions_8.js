@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['redraw',['redraw',['../class_parameter_window.html#a44a057feb7b57d6b28e3ed57e0af2fca',1,'ParameterWindow']]],
-  ['removebrdf',['removeBRDF',['../class_parameter_window.html#a03665f53d06b1ebb0c0470ddc3332cdc',1,'ParameterWindow']]]
+  ['keypressevent',['keyPressEvent',['../class_chef_devr_1_1_b_r_d_f_map_scene.html#ac94eaceaf77a1fcd9bf5e6105b67cd7e',1,'ChefDevr::BRDFMapScene']]],
+  ['keyreleaseevent',['keyReleaseEvent',['../class_chef_devr_1_1_b_r_d_f_map_scene.html#a1da051acdae0ae51a4c8337ad2450827',1,'ChefDevr::BRDFMapScene']]]
 ];

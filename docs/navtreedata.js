@@ -1,6 +1,9 @@
 var NAVTREE =
 [
   [ "BRDFExplorer3000", "index.html", [
+    [ "Namespaces", null, [
+      [ "Namespace List", "namespaces.html", "namespaces" ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -19,7 +22,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_parameter_window_8h.html"
+"_b_r_d_f_map_point_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
