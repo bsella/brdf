@@ -1,0 +1,6 @@
+digraph "ChefDevr::BRDFReconstructionModel&lt; Scalar &gt;"
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{ChefDevr::BRDFReconstruction\lModel\< Scalar \>\n|- paramtrzFilePath\l- brdfFolderPath\l- Z\l- K_minus1\l- X\l- dim\l- brdfReconstructor\l|+ BRDFReconstructionModel()\l+ ~BRDFReconstructionModel()\l+ createBRDFFromLSCoord()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

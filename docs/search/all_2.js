@@ -5,7 +5,7 @@ var searchData=
   ['brdflistchanged',['brdfListChanged',['../class_parameter_window.html#a94cd5fb5725d7d12a5c7c541053a01f5',1,'ParameterWindow']]],
   ['brdfmappoint',['BRDFMapPoint',['../class_chef_devr_1_1_b_r_d_f_map_point.html',1,'ChefDevr::BRDFMapPoint'],['../class_chef_devr_1_1_b_r_d_f_map_point.html#a361b51464111d7c038138b468bab68d1',1,'ChefDevr::BRDFMapPoint::BRDFMapPoint()']]],
   ['brdfmappoint_2eh',['BRDFMapPoint.h',['../_b_r_d_f_map_point_8h.html',1,'']]],
-  ['brdfmapscene',['BRDFMapScene',['../class_chef_devr_1_1_b_r_d_f_map_scene.html',1,'ChefDevr::BRDFMapScene'],['../class_parameter_window.html#aa7146f37b49c69560161483202c8740f',1,'ParameterWindow::brdfMapScene()'],['../class_chef_devr_1_1_b_r_d_f_map_scene.html#aeff00c6e209483ca173f417b2a648e9b',1,'ChefDevr::BRDFMapScene::BRDFMapScene()']]],
+  ['brdfmapscene',['BRDFMapScene',['../class_chef_devr_1_1_b_r_d_f_map_scene.html',1,'ChefDevr::BRDFMapScene'],['../class_chef_devr_1_1_b_r_d_f_map_scene.html#aeff00c6e209483ca173f417b2a648e9b',1,'ChefDevr::BRDFMapScene::BRDFMapScene()'],['../class_parameter_window.html#aa7146f37b49c69560161483202c8740f',1,'ParameterWindow::brdfMapScene()']]],
   ['brdfmapscene_2ecpp',['BRDFMapScene.cpp',['../_b_r_d_f_map_scene_8cpp.html',1,'']]],
   ['brdfmapscene_2eh',['BRDFMapScene.h',['../_b_r_d_f_map_scene_8h.html',1,'']]],
   ['brdfmodel',['brdfModel',['../class_parameter_window.html#a970266a53858d28fbaa6b2d61bd21e99',1,'ParameterWindow']]],
@@ -15,5 +15,5 @@ var searchData=
   ['brdfreconstructionmodel',['BRDFReconstructionModel',['../class_chef_devr_1_1_b_r_d_f_reconstruction_model.html',1,'ChefDevr::BRDFReconstructionModel&lt; Scalar &gt;'],['../class_chef_devr_1_1_b_r_d_f_reconstruction_model.html#aee081d5480e2c963bf6bb2dfae130450',1,'ChefDevr::BRDFReconstructionModel::BRDFReconstructionModel()']]],
   ['brdfreconstructionmodel_2ecpp',['BRDFReconstructionModel.cpp',['../_b_r_d_f_reconstruction_model_8cpp.html',1,'']]],
   ['brdfreconstructionmodel_2eh',['BRDFReconstructionModel.h',['../_b_r_d_f_reconstruction_model_8h.html',1,'']]],
-  ['brdfreconstructor',['BRDFReconstructor',['../class_chef_devr_1_1_b_r_d_f_reconstructor.html',1,'ChefDevr::BRDFReconstructor&lt; Scalar &gt;'],['../class_chef_devr_1_1_b_r_d_f_reconstructor.html#a4e82466cb5906ba46092b92bc5323c59',1,'ChefDevr::BRDFReconstructor::BRDFReconstructor()'],['../class_chef_devr_1_1_b_r_d_f_reconstruction_model.html#a614f008a1ad7b0f6e7eda39d907c5c23',1,'ChefDevr::BRDFReconstructionModel::brdfReconstructor()']]]
+  ['brdfreconstructor',['brdfReconstructor',['../class_chef_devr_1_1_b_r_d_f_reconstruction_model.html#a614f008a1ad7b0f6e7eda39d907c5c23',1,'ChefDevr::BRDFReconstructionModel']]]
 ];

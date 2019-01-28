@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vector',['Vector',['../namespace_chef_devr.html#ab94fb10d249c6a83c367d13ef7598637',1,'ChefDevr']]]
+  ['x',['X',['../class_chef_devr_1_1_b_r_d_f_reconstruction_model.html#a84e03cd92421979ddc32ccc1ec024636',1,'ChefDevr::BRDFReconstructionModel']]]
 ];

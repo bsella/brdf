@@ -4,7 +4,6 @@ var hierarchy =
       [ "ChefDevr::BRDFReconstructed", "class_chef_devr_1_1_b_r_d_f_reconstructed.html", null ]
     ] ],
     [ "ChefDevr::BRDFReconstructionModel< Scalar >", "class_chef_devr_1_1_b_r_d_f_reconstruction_model.html", null ],
-    [ "ChefDevr::BRDFReconstructor< Scalar >", "class_chef_devr_1_1_b_r_d_f_reconstructor.html", null ],
     [ "QGraphicsItem", null, [
       [ "ChefDevr::BRDFMapPoint", "class_chef_devr_1_1_b_r_d_f_map_point.html", null ]
     ] ],

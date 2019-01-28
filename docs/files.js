@@ -17,7 +17,5 @@ var files =
     ] ],
     [ "ParameterWindow.h", "_parameter_window_8h.html", [
       [ "ParameterWindow", "class_parameter_window.html", "class_parameter_window" ]
-    ] ],
-    [ "Parametrisation.h", "_parametrisation_8h.html", "_parametrisation_8h" ],
-    [ "types.h", "types_8h.html", "types_8h" ]
+    ] ]
 ];

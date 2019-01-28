@@ -2,12 +2,7 @@ var NAVTREE =
 [
   [ "BRDFExplorer3000", "index.html", [
     [ "Namespaces", null, [
-      [ "Namespace List", "namespaces.html", "namespaces" ],
-      [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ]
-      ] ]
+      [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -20,11 +15,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.html", "files" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
+      [ "File List", "files.html", "files" ]
     ] ]
   ] ]
 ];

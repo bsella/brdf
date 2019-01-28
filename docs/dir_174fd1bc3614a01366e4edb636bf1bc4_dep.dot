@@ -1,0 +1,13 @@
+digraph "ChefDevr" {
+  compound=true
+  node [ fontsize="10", fontname="FreeSans"];
+  edge [ labelfontsize="10", labelfontname="FreeSans"];
+  subgraph clusterdir_d5c38b8bd02c4f40ba025b7528197ede {
+    graph [ bgcolor="#ddddee", pencolor="black", label="M2" fontname="FreeSans", fontsize="10", URL="dir_d5c38b8bd02c4f40ba025b7528197ede.html"]
+  subgraph clusterdir_174fd1bc3614a01366e4edb636bf1bc4 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_174fd1bc3614a01366e4edb636bf1bc4.html"];
+    dir_174fd1bc3614a01366e4edb636bf1bc4 [shape=plaintext label="ChefDevr"];
+    dir_2aab34440b9900053a26f1745da5dd21 [shape=box label="brdf" color="red" fillcolor="white" style="filled" URL="dir_2aab34440b9900053a26f1745da5dd21.html"];
+  }
+  }
+}

@@ -1,0 +1,14 @@
+digraph "brdf" {
+  compound=true
+  node [ fontsize="10", fontname="FreeSans"];
+  edge [ labelfontsize="10", labelfontname="FreeSans"];
+  subgraph clusterdir_3cb6b6b60e61da7f21733696e20cce7b {
+    graph [ bgcolor="#ddddee", pencolor="black", label="src" fontname="FreeSans", fontsize="10", URL="dir_3cb6b6b60e61da7f21733696e20cce7b.html"]
+  subgraph clusterdir_709e0e32b5c91d0e53182c37e0d576ec {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_709e0e32b5c91d0e53182c37e0d576ec.html"];
+    dir_709e0e32b5c91d0e53182c37e0d576ec [shape=plaintext label="brdf"];
+    dir_9156d4818bae0a89964c8336eba4c835 [shape=box label="ChefDevr" color="black" fillcolor="white" style="filled" URL="dir_9156d4818bae0a89964c8336eba4c835.html"];
+  }
+  }
+  dir_709e0e32b5c91d0e53182c37e0d576ec->dir_9156d4818bae0a89964c8336eba4c835 [headlabel="2", labeldistance=1.5 headhref="dir_000008_000009.html"];
+}
