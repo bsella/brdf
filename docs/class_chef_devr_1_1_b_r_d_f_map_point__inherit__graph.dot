@@ -1,0 +1,9 @@
+digraph "ChefDevr::BRDFMapPoint"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node0 [label="{ChefDevr::BRDFMapPoint\n|- _name\l- userInput\l|+ BRDFMapPoint()\l+ ~BRDFMapPoint()\l- boundingRect()\l- paint()\l- hoverEnterEvent()\l- hoverLeaveEvent()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Point on the BRDFMap corresponding to a BRDF."];
+  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node1 [label="{QGraphicsItem\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

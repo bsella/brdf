@@ -1,0 +1,9 @@
+digraph "ParameterWindow"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node2 [label="{ParameterWindow\n|- incidentThetaWidget\l- incidentPhiWidget\l- cmdLayout\l- mainLayout\l- channelComboBox\l- logPlotCheckbox\l- nDotLCheckbox\l- spaceFiller\l- brdfMapScene\l- theta\land 7 more...\l|+ ParameterWindow()\l+ ~ParameterWindow()\l+ getBRDFList()\l+ openBRDFFile()\l+ openBRDFFiles()\l+ openBRDFFromFile()\l+ openBRDFFromMap()\l+ emitIncidentDirectionChanged()\l+ emitGraphParametersChanged()\l+ emitBRDFListChanged()\l- createLayout()\l- addBRDFWidget()\l- setBRDFColorMask()\l- incidentVectorChanged()\l- soloBRDF()\l- removeBRDF()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node3 [label="{QWidget\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}
