@@ -8,7 +8,7 @@
 #include <string>
 
 #include "BRDFReconstructed.h"
-#include "../../BRDF3000/src/Parametrisation/Parametrisation.h"
+#include "Parametrisation.h"
 
 namespace ChefDevr
 {
@@ -82,7 +82,7 @@ namespace ChefDevr
         /**
          * @brief The object that does BRDF reconstruction computations
          */
-        BRDFReconstructor brdfReconstructor;
+        //BRDFReconstructor brdfReconstructor;
     };
 }// namespace ChefDevr
 

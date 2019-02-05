@@ -97,7 +97,7 @@ public slots:
     /**
      * @brief Opens the map widget that allows choosing a BRDF from latent space coordinates
      */
-    void openBRDFFromMap();
+    //void openBRDFFromMap();
     
     void emitIncidentDirectionChanged();
     void emitGraphParametersChanged();
@@ -128,7 +128,7 @@ private:
     QFrame* spaceFiller;
     
     /** @brief Pointer to the map widget that allows choosing a BRDF from latent space coordinates */
-    BRDFMapScene* brdfMapScene;
+    //BRDFMapScene* brdfMapScene;
     
     float theta, phi;
     bool useLogPlot;
@@ -139,7 +139,7 @@ private:
 
     QFileDialog* fileDialog;
 
-    BRDFReconstructionModel brdfModel;
+    //BRDFReconstructionModel brdfModel;
 };
 
 #endif

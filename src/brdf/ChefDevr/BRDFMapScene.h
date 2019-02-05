@@ -22,7 +22,7 @@ namespace ChefDevr
         * @brief Background image of the BRDF space reduced
         * in a 2D image
         */
-        const QPixMap _background;
+        const QPixmap _background;
 
         /**
         * @brief Adds a point to the scene
@@ -58,13 +58,13 @@ namespace ChefDevr
         * @brief Handles the mousePress/Click event
         * @details Places a point on the scene
         */
-        void mousPressEvent   (QGraphicsSceneMouseEvent*) override;
+        void mousePressEvent   (QGraphicsSceneMouseEvent*) override;
 
         /**
         * @brief Handles the mouseRelease event
         * @details Confirms th click
         */
-        void mousReleaseEvent (QGraphicsSceneMouseEvent*) override;
+        void mouseReleaseEvent (QGraphicsSceneMouseEvent*) override;
 
         /**
         * @brief Handles keypresses
