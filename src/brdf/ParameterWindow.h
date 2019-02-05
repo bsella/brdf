@@ -97,7 +97,7 @@ public slots:
     /**
      * @brief Opens the map widget that allows choosing a BRDF from latent space coordinates
      */
-    //void openBRDFFromMap();
+    void openBRDFFromMap();
     
     void emitIncidentDirectionChanged();
     void emitGraphParametersChanged();

@@ -49,6 +49,7 @@ infringement.
 #include <QCheckBox>
 #include <QScrollArea>
 #include <QFileDialog>
+#include "ChefDevr/BRDFMapDialog.h"
 #include <vector>
 #include "ParameterWindow.h"
 #include "FloatVarWidget.h"
@@ -161,7 +162,10 @@ void ParameterWindow::openBRDFFromFile()
     }
 }
 
-
+void ParameterWindow::openBRDFFromMap(){
+    ChefDevr::BRDFMapDialog dial;
+    dial.exec();
+}
 
 ParameterGroupWidget* ParameterWindow::addBRDFWidget( BRDFBase* b )
 {
