@@ -16,7 +16,7 @@ namespace ChefDevr
     */
     class BRDFReconstructed : public BRDFMeasuredMERL {
     public:
-
+        BRDFReconstructed();
         /**
         * @brief Save the BRDF in a file
         *

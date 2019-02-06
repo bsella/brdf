@@ -47,6 +47,7 @@ FILE(GLOB SOURCES
     ptex/PtexUtils.cpp
     ptex/PtexCache.cpp
     ptex/PtexHalf.cpp
+    ChefDevr/*.cpp
 )
 
 find_package(Qt5Widgets REQUIRED)
