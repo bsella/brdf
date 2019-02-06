@@ -55,7 +55,7 @@ find_package(Qt5OpenGL REQUIRED)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
-add_compile_definitions(PTEX_STATIC NOMINMAX)
+#target_compile_definitions(PTEX_STATIC NOMINMAX)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lz")
 
