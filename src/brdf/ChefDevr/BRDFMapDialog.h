@@ -11,9 +11,9 @@ namespace ChefDevr{
 	public:
 		explicit BRDFMapDialog(QWidget* parent= nullptr);
 		~BRDFMapDialog()override;
-		// static BRDFReconstructed* getBRDF();
+		static QPointF getBRDFPos();
 	private:
-		BRDFMapScene* scene;
+		BRDFMapScene* scene=nullptr;
 	};
 }
 

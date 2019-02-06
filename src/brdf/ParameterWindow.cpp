@@ -163,8 +163,7 @@ void ParameterWindow::openBRDFFromFile()
 }
 
 void ParameterWindow::openBRDFFromMap(){
-    ChefDevr::BRDFMapDialog dial;
-    dial.exec();
+    QPointF p =ChefDevr::BRDFMapDialog::getBRDFPos();
 }
 
 ParameterGroupWidget* ParameterWindow::addBRDFWidget( BRDFBase* b )

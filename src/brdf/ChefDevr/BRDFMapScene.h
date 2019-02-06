@@ -5,6 +5,7 @@
  * @file BRDFMapScene.h
  */
 
+#include "BRDFMapPoint.h"
 #include <QGraphicsScene>
 #include <string>
 
@@ -18,6 +19,11 @@ namespace ChefDevr
         explicit BRDFMapScene (const std::string& filePath, QWidget* parent = nullptr);
         ~BRDFMapScene () override;
     private:
+
+        friend class BRDFMapDialog;
+
+        BRDFMapPoint* selected=nullptr;
+
         /**
         * @brief Background image of the BRDF space reduced
         * in a 2D image

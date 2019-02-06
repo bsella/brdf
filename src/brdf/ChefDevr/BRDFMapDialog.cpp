@@ -3,6 +3,8 @@
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
 
+#include <iostream>
+
 namespace ChefDevr{
 	BRDFMapDialog::BRDFMapDialog(QWidget*parent):QDialog(parent){
 		QVBoxLayout *vbl = new QVBoxLayout;
@@ -27,9 +29,14 @@ namespace ChefDevr{
 		setFixedSize(minimumSize());
 	}
 
-	BRDFMapDialog::~BRDFMapDialog(){}
+	BRDFMapDialog::~BRDFMapDialog(){
+		delete scene;
+	}
 
-	// static BRDFReconstructed* BRDFMapDialog::getBRDF(){
-		// return nullptr;
-	// }
+	QPointF BRDFMapDialog::getBRDFPos(){
+		BRDFMapDialog diag;
+		if(diag.exec() && diag.scene && diag.scene->selected)
+			return diag.scene->selected->pos();
+		return QPointF(2,2);
+	}
 }
