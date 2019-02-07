@@ -9,9 +9,10 @@ namespace ChefDevr
     BRDFMapScene::~BRDFMapScene(){
     }
 
-
     void BRDFMapScene::addPoint(const std::string& name, float x, float y){
-
+    	BRDFMapPoint *p = new BRDFMapPoint(name, Qt::red,false);
+    	p->setPos(x,y);
+    	addItem(p);
     }
     void BRDFMapScene::drawBackground (QPainter*, const QRectF& rect){
 
@@ -19,12 +20,12 @@ namespace ChefDevr
     void BRDFMapScene::drawForeground (QPainter*, const QRectF& rect){
 
     }
-    void BRDFMapScene::mousePressEvent   (QGraphicsSceneMouseEvent*){
-
-    }
-    void BRDFMapScene::mouseReleaseEvent (QGraphicsSceneMouseEvent*){
-
-    }
+    // void BRDFMapScene::mousePressEvent   (QGraphicsSceneMouseEvent*e){
+    //     QGraphicsScene::mousePressEvent(e);
+    // }
+    // void BRDFMapScene::mouseReleaseEvent (QGraphicsSceneMouseEvent*e){
+    //     QGraphicsScene::mouseReleaseEvent(e);
+    // }
     void BRDFMapScene::keyPressEvent   (QKeyEvent*){
 
     }

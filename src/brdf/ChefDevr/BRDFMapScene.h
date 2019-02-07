@@ -64,13 +64,13 @@ namespace ChefDevr
         * @brief Handles the mousePress/Click event
         * @details Places a point on the scene
         */
-        void mousePressEvent   (QGraphicsSceneMouseEvent*) override;
+        // void mousePressEvent   (QGraphicsSceneMouseEvent*) override;
 
         /**
         * @brief Handles the mouseRelease event
         * @details Confirms th click
         */
-        void mouseReleaseEvent (QGraphicsSceneMouseEvent*) override;
+        // void mouseReleaseEvent (QGraphicsSceneMouseEvent*) override;
 
         /**
         * @brief Handles keypresses

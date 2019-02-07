@@ -14,10 +14,12 @@ namespace ChefDevr{
 		buttons->setWindowFlag(Qt::Widget);
 
 		mapview->setFixedSize(512,512);
-
+		mapview->setDragMode(QGraphicsView::DragMode::ScrollHandDrag);
+		mapview->setInteractive(true);
 		//Initialize Scene
-		//scene=
-		//mapview->setScene(scene);
+		scene= new BRDFMapScene("");
+		scene->addPoint("test",0,0);
+		mapview->setScene(scene);
 
 		vbl->setMargin(2);
 		vbl->addWidget(mapview);
