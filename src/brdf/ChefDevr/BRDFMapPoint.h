@@ -15,7 +15,7 @@ namespace ChefDevr
     */
     class BRDFMapPoint : public QGraphicsItem{
     public:
-        explicit BRDFMapPoint (const std::string& name, QColor clr, bool ui);
+        explicit BRDFMapPoint (const std::string& name, QColor clr);
         ~BRDFMapPoint () override;
     private:
         const QColor _clr;
@@ -24,10 +24,6 @@ namespace ChefDevr
         */
         const std::string _name;
 
-        /**
-        * @brief Is point added manually by the user
-        */
-        const bool userInput;
         /**
         * @brief Override of base class QGraphicsItem's
         * fuction : boundingRect

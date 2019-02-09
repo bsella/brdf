@@ -19,16 +19,8 @@ namespace ChefDevr
     public:
         explicit BRDFMapScene();
         ~BRDFMapScene () override;
+        void setSelectedPoint(float x, float y);
     private:
-
-        BRDFMapPoint* selected=nullptr;
-
-        /**
-        * @brief Background image of the BRDF space reduced
-        * in a 2D image
-        */
-        QPixmap _background;
-
         /**
         * @brief Adds a point to the scene
         * 
@@ -37,6 +29,14 @@ namespace ChefDevr
         * @param y y position of the point (between 0 and 1)
         */
         void addPoint(const std::string& name, float x, float y);
+
+        BRDFMapPoint* selected=nullptr;
+
+        /**
+        * @brief Background image of the BRDF space reduced
+        * in a 2D image
+        */
+        QPixmap _background;
 
         /**
         * @brief Overriding the drawBackground function to
