@@ -1,28 +1,20 @@
 #include "BRDFMapDialog.h"
-#include <QGraphicsView>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
-
-#include <iostream>
 
 namespace ChefDevr{
 	BRDFMapDialog::BRDFMapDialog(QWidget*parent):QDialog(parent){
 		QVBoxLayout *vbl = new QVBoxLayout;
-		QGraphicsView* mapview= new QGraphicsView;
 		QDialogButtonBox* buttons= new QDialogButtonBox(this);
+		view= new BRDFMapView;
 		buttons->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
 		buttons->setWindowFlag(Qt::Widget);
 
-		mapview->setFixedSize(512,512);
-		mapview->setDragMode(QGraphicsView::DragMode::ScrollHandDrag);
-		mapview->setInteractive(true);
-		//Initialize Scene
-		scene= new BRDFMapScene("");
-		scene->addPoint("test",0,0);
-		mapview->setScene(scene);
-
+		view->setFixedSize(512,512);
+		view->setInteractive(true);
+		
 		vbl->setMargin(2);
-		vbl->addWidget(mapview);
+		vbl->addWidget(view);
 		vbl->addWidget(buttons);
 		setLayout(vbl);
 
@@ -32,13 +24,14 @@ namespace ChefDevr{
 	}
 
 	BRDFMapDialog::~BRDFMapDialog(){
-		delete scene;
+		delete view;
 	}
 
 	QPointF BRDFMapDialog::getBRDFPos(){
 		BRDFMapDialog diag;
-		if(diag.exec() && diag.scene && diag.scene->selected)
-			return diag.scene->selected->pos();
+		//if(diag.exec() && diag.scene && diag.scene->selected)
+		//	return diag.scene->selected->pos();
+		diag.exec();
 		return QPointF(2,2);
 	}
 }

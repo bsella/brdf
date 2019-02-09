@@ -1,5 +1,5 @@
-#ifndef BRDFMAP_H
-#define BRDFMAP_H
+#ifndef BRDFMAPDISPLAY_H
+#define BRDFMAPDISPLAY_H
 
 /**
  * @file BRDFMapScene.h
@@ -7,6 +7,7 @@
 
 #include "BRDFMapPoint.h"
 #include <QGraphicsScene>
+#include <QGraphicsView>
 #include <string>
 
 namespace ChefDevr
@@ -16,11 +17,9 @@ namespace ChefDevr
     */
     class BRDFMapScene : public QGraphicsScene{
     public:
-        explicit BRDFMapScene (const std::string& filePath, QWidget* parent = nullptr);
+        explicit BRDFMapScene();
         ~BRDFMapScene () override;
     private:
-
-        friend class BRDFMapDialog;
 
         BRDFMapPoint* selected=nullptr;
 
@@ -28,7 +27,7 @@ namespace ChefDevr
         * @brief Background image of the BRDF space reduced
         * in a 2D image
         */
-        const QPixmap _background;
+        QPixmap _background;
 
         /**
         * @brief Adds a point to the scene
@@ -81,6 +80,17 @@ namespace ChefDevr
         * @brief Confirms keypresses
         */
         void keyReleaseEvent (QKeyEvent*) override;
+    };
+
+    class BRDFMapView : public QGraphicsView{
+    public:
+        explicit BRDFMapView(QWidget* parent= nullptr);
+        ~BRDFMapView();
+    private:
+        BRDFMapScene* scene=nullptr;
+        void mousePressEvent  (QMouseEvent*);
+        void mouseReleaseEvent(QMouseEvent*);
+        void mouseMoveEvent   (QMouseEvent*);
     };
 } // namespace ChefDevr
 

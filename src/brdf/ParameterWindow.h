@@ -50,7 +50,7 @@ infringement.
 #include <vector>
 #include "BRDFBase.h"
 #include "ChefDevr/BRDFReconstructionModel.h"
-#include "ChefDevr/BRDFMapScene.h"
+#include "ChefDevr/BRDFMapDisplay.h"
 
 class QSlider;
 class QLabel;

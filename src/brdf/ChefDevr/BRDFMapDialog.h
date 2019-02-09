@@ -2,7 +2,7 @@
 #define BRDFDIALOG_H
 
 #include <QDialog>
-#include "BRDFMapScene.h"
+#include "BRDFMapDisplay.h"
 #include "BRDFReconstructed.h"
 
 namespace ChefDevr{
@@ -13,7 +13,7 @@ namespace ChefDevr{
 		~BRDFMapDialog()override;
 		static QPointF getBRDFPos();
 	private:
-		BRDFMapScene* scene=nullptr;
+		BRDFMapView* view;
 	};
 }
 
