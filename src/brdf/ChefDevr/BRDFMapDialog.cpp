@@ -8,7 +8,7 @@ namespace ChefDevr{
 		QDialogButtonBox* buttons= new QDialogButtonBox(this);
 		view= new BRDFMapView;
 		buttons->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
-		buttons->setWindowFlag(Qt::Widget);
+		buttons->setWindowFlags(Qt::Widget);
 
 		view->setFixedSize(512,512);
 		view->setInteractive(true);
