@@ -49,7 +49,6 @@ infringement.
 #include <QWidget>
 #include <vector>
 #include "BRDFBase.h"
-#include "ChefDevr/BRDFReconstructionModel.h"
 #include "ChefDevr/BRDFMapDisplay.h"
 
 class QSlider;
@@ -138,8 +137,6 @@ private:
     bool soloBRDFUsesColors;
 
     QFileDialog* fileDialog;
-
-    //BRDFReconstructionModel brdfModel;
 };
 
 #endif

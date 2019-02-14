@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include "BRDFMapDisplay.h"
-#include "BRDFReconstructed.h"
+#include "BRDFReconstructionModel.h"
 
 namespace ChefDevr{
 	class BRDFMapDialog : public QDialog{
@@ -14,6 +14,7 @@ namespace ChefDevr{
 		static QPointF getBRDFPos();
 	private:
 		BRDFMapView* view;
+    	static const BRDFReconstructionModel<double> brdfModel;
 	};
 }
 

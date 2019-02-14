@@ -49,19 +49,16 @@ namespace ChefDevr
             explicit BRDFReconstructionModelError(const std::string &message_error) :
             runtime_error{message_error} {}
         };
+        /** 
+         * @brief Latent variables column vector
+         * 
+         * Each stack of dim elements makes a latent variable
+         */
+        Vector<Scalar> X;
 
-    private:
-        /**
-         * @brief The path of the file that constains the parametrisation data
-         * i.e. K_minus1 and X with brdf filenames
-         */
-        std::string paramtrzFilePath;
-        
-        /**
-         * @brief The path of the folder where BRDF files are located
-         */
-        std::string brdfFolderPath;
-        
+        std::vector<std::string> brdfNames;
+    
+    private:        
         /**
          * @brief The BRDF matrix
          *
@@ -77,12 +74,6 @@ namespace ChefDevr
          */
         Matrix<Scalar> K_minus1;
         
-        /** 
-         * @brief Latent variables column vector
-         * 
-         * Each stack of dim elements makes a latent variable
-         */
-        Vector<Scalar> X;
         
         /** 
          * @brief Dimension of the latent space

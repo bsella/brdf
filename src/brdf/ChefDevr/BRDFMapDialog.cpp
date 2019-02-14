@@ -3,10 +3,13 @@
 #include <QDialogButtonBox>
 
 namespace ChefDevr{
+
+    const BRDFReconstructionModel<double> BRDFMapDialog::brdfModel("data/paramtrzData","brdfs3000");
+
 	BRDFMapDialog::BRDFMapDialog(QWidget*parent):QDialog(parent){
 		QVBoxLayout *vbl = new QVBoxLayout;
 		QDialogButtonBox* buttons= new QDialogButtonBox(this);
-		view= new BRDFMapView;
+		view= new BRDFMapView(&brdfModel);
 		buttons->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
 		buttons->setWindowFlags(Qt::Widget);
 

@@ -57,11 +57,9 @@ infringement.
 #include "ShowingDockWidget.h"
 #include "ViewerWindow.h"
 
-
-
 MainWindow::MainWindow()
 {
-    setWindowTitle( "BRDF Explorer" );
+    setWindowTitle( "BRDF Explorer 3000" );
 
     // create the parameter window
     paramWnd = new ParameterWindow();

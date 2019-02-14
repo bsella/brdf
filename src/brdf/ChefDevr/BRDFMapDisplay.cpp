@@ -2,7 +2,7 @@
 #include "BRDFMapPoint.h"
 #include <QPainter>
 #include <QMouseEvent>
-
+#include <QScrollBar>
 #include <iostream>
 
 namespace ChefDevr
@@ -48,17 +48,22 @@ namespace ChefDevr
     }
 //##########################BRDFMapView########################################
 
-    BRDFMapView::BRDFMapView(QWidget* parent):QGraphicsView(parent){
-        scene= new BRDFMapScene();
+    BRDFMapView::BRDFMapView(const BRDFReconstructionModel<double>* model, QWidget* parent):QGraphicsView(parent){
+        scene= new BRDFMapScene;
         setScene(scene);
+        for(int i=0; i<model->brdfNames.size();i++)
+            scene->addPoint(model->brdfNames[i], model->X[2*i], model->X[2*i+1]);
+        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        setVerticalScrollBarPolicy  (Qt::ScrollBarAlwaysOff);
     }
     BRDFMapView::~BRDFMapView(){}
 
-    static QPointF tmpPos;
+    static QPointF tmpPos, clickPos;
     static bool click;
 
     void BRDFMapView::mousePressEvent(QMouseEvent*e){
         tmpPos= e->pos()+sceneRect().topLeft();
+        clickPos= e->pos();
         click=true;
     }
     void BRDFMapView::mouseReleaseEvent(QMouseEvent*e){
@@ -68,7 +73,9 @@ namespace ChefDevr
             scene->setSelectedPoint(tmp.x(),tmp.y());
     }
     void BRDFMapView::mouseMoveEvent(QMouseEvent*e){
-        setSceneRect(QRectF(tmpPos-e->pos(),sceneRect().size()));
+        horizontalScrollBar()->setValue(horizontalScrollBar()->value() + clickPos.x()-e->pos().x());
+        verticalScrollBar()->setValue( verticalScrollBar()->value()    + clickPos.y()-e->pos().y());
+        clickPos=e->pos();
         click=false;
     }
 

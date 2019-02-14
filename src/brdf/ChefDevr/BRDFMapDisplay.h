@@ -9,6 +9,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <string>
+#include "BRDFReconstructionModel.h"
 
 namespace ChefDevr
 {
@@ -20,7 +21,6 @@ namespace ChefDevr
         explicit BRDFMapScene();
         ~BRDFMapScene () override;
         void setSelectedPoint(float x, float y);
-    private:
         /**
         * @brief Adds a point to the scene
         * 
@@ -29,6 +29,7 @@ namespace ChefDevr
         * @param y y position of the point (between 0 and 1)
         */
         void addPoint(const std::string& name, float x, float y);
+    private:
 
         BRDFMapPoint* selected=nullptr;
 
@@ -84,7 +85,7 @@ namespace ChefDevr
 
     class BRDFMapView : public QGraphicsView{
     public:
-        explicit BRDFMapView(QWidget* parent= nullptr);
+        explicit BRDFMapView(const BRDFReconstructionModel<double>*, QWidget* parent= nullptr);
         ~BRDFMapView();
     private:
         BRDFMapScene* scene=nullptr;
