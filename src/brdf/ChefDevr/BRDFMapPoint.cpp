@@ -1,9 +1,13 @@
 #include "BRDFMapPoint.h"
 
 #include <QPainter>
+#include <QGraphicsScene>
 
 namespace ChefDevr{
-	BRDFMapPoint::BRDFMapPoint(const std::string& name, QColor clr): _name(name), _clr(clr){}
+	BRDFMapPoint* BRDFMapPoint::hover = nullptr;
+	BRDFMapPoint::BRDFMapPoint(const std::string& name, QColor clr): _name(name), _clr(clr){
+		setAcceptHoverEvents(true);
+	}
 	BRDFMapPoint::~BRDFMapPoint(){}
 
 	QRectF BRDFMapPoint::boundingRect()const{
@@ -21,9 +25,11 @@ namespace ChefDevr{
 	}
 
 	void BRDFMapPoint::hoverEnterEvent(QGraphicsSceneHoverEvent*){
-
+		hover=this;
+		scene()->update();
 	}
 	void BRDFMapPoint::hoverLeaveEvent(QGraphicsSceneHoverEvent*){
-
+		hover=nullptr;
+		scene()->update();
 	}
 }

@@ -17,13 +17,15 @@ namespace ChefDevr
     public:
         explicit BRDFMapPoint (const std::string& name, QColor clr);
         ~BRDFMapPoint () override;
+        inline std::string name()const{return _name;}
+        static BRDFMapPoint* hover;
     private:
-        const QColor _clr;
         /**
         * @brief The name of the point
         */
         const std::string _name;
 
+        const QColor _clr;
         /**
         * @brief Override of base class QGraphicsItem's
         * fuction : boundingRect

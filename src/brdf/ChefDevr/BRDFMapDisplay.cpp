@@ -7,9 +7,9 @@
 
 namespace ChefDevr
 {
-    BRDFMapScene::BRDFMapScene():QGraphicsScene(){
-        _background= QPixmap("./images/map.bmp");
-        addPoint("test",0,0);
+    static QFont _font;
+    BRDFMapScene::BRDFMapScene():QGraphicsScene(), _background(QPixmap("./images/map.bmp")){
+        _font.setBold(true);
     }
 
     BRDFMapScene::~BRDFMapScene(){
@@ -17,27 +17,32 @@ namespace ChefDevr
     }
 
     void BRDFMapScene::addPoint(const std::string& name, float x, float y){
-    	BRDFMapPoint *p = new BRDFMapPoint(name, Qt::red);
-    	p->setPos(x*512,y*512);
-    	addItem(p);
+        BRDFMapPoint *p = new BRDFMapPoint(name, Qt::red);
+        p->setPos(x*512,y*512);
+        addItem(p);
     }
-    void BRDFMapScene::drawBackground (QPainter*p, const QRectF& rect){
+    void BRDFMapScene::drawBackground (QPainter*p, const QRectF&){
         p->drawPixmap(-512,-512,1024,1024,_background);
     }
-    void BRDFMapScene::drawForeground (QPainter*, const QRectF& rect){
-
+    void BRDFMapScene::drawForeground (QPainter*p, const QRectF&){
+        for(const auto& i : items()){
+            BRDFMapPoint* point= (BRDFMapPoint*)i;
+            if(point==selected) continue;
+            if(ctrlPressed || point == BRDFMapPoint::hover){
+                p->setPen(QPen(Qt::white));
+                p->setFont(_font);
+                p->drawText(point->pos(), QString::fromStdString(point->name().substr(0,point->name().size()-7)));
+                p->setPen(QPen(Qt::black));
+            }
+        }
     }
-    // void BRDFMapScene::mousePressEvent   (QGraphicsSceneMouseEvent*e){
-    //     QGraphicsScene::mousePressEvent(e);
-    // }
-    // void BRDFMapScene::mouseReleaseEvent (QGraphicsSceneMouseEvent*e){
-    //     QGraphicsScene::mouseReleaseEvent(e);
-    // }
-    void BRDFMapScene::keyPressEvent   (QKeyEvent*){
-
+    void BRDFMapScene::keyPressEvent   (QKeyEvent*e){
+        ctrlPressed= (e->modifiers() & Qt::ControlModifier);
+        update();
     }
-    void BRDFMapScene::keyReleaseEvent (QKeyEvent*){
-
+    void BRDFMapScene::keyReleaseEvent (QKeyEvent*e){
+        ctrlPressed= (e->modifiers() & Qt::ControlModifier);
+        update();
     }
     void BRDFMapScene::setSelectedPoint(float x, float y){
         if(!selected){
@@ -58,25 +63,27 @@ namespace ChefDevr
     }
     BRDFMapView::~BRDFMapView(){}
 
-    static QPointF tmpPos, clickPos;
-    static bool click;
+    static QPointF clickPos;
+    static bool click, press;
 
     void BRDFMapView::mousePressEvent(QMouseEvent*e){
-        tmpPos= e->pos()+sceneRect().topLeft();
         clickPos= e->pos();
-        click=true;
+        press = click=true;
     }
     void BRDFMapView::mouseReleaseEvent(QMouseEvent*e){
-        QGraphicsView::mouseReleaseEvent(e);
+        press=false;
         const QPointF tmp= mapToScene(e->pos())/512;
         if(click && tmp.x()>-1 && tmp.x()<1 && tmp.y()>-1 && tmp.y()<1)
             scene->setSelectedPoint(tmp.x(),tmp.y());
     }
     void BRDFMapView::mouseMoveEvent(QMouseEvent*e){
-        horizontalScrollBar()->setValue(horizontalScrollBar()->value() + clickPos.x()-e->pos().x());
-        verticalScrollBar()->setValue( verticalScrollBar()->value()    + clickPos.y()-e->pos().y());
-        clickPos=e->pos();
+        if(press){
+            horizontalScrollBar()->setValue(horizontalScrollBar()->value() + clickPos.x()-e->pos().x());
+            verticalScrollBar()->setValue( verticalScrollBar()->value()    + clickPos.y()-e->pos().y());
+            clickPos=e->pos();
+        }
         click=false;
+        QGraphicsView::mouseMoveEvent(e);
     }
 
 } // namespace ChefDevr

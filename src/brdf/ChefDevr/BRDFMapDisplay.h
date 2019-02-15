@@ -31,13 +31,15 @@ namespace ChefDevr
         void addPoint(const std::string& name, float x, float y);
     private:
 
+        bool ctrlPressed=false;
+
         BRDFMapPoint* selected=nullptr;
 
         /**
         * @brief Background image of the BRDF space reduced
         * in a 2D image
         */
-        QPixmap _background;
+        const QPixmap _background;
 
         /**
         * @brief Overriding the drawBackground function to
@@ -59,18 +61,6 @@ namespace ChefDevr
         * isolines and the names of BRDFs
         */
         void drawForeground (QPainter*, const QRectF& rect) override;
-
-        /**
-        * @brief Handles the mousePress/Click event
-        * @details Places a point on the scene
-        */
-        // void mousePressEvent   (QGraphicsSceneMouseEvent*) override;
-
-        /**
-        * @brief Handles the mouseRelease event
-        * @details Confirms th click
-        */
-        // void mouseReleaseEvent (QGraphicsSceneMouseEvent*) override;
 
         /**
         * @brief Handles keypresses
