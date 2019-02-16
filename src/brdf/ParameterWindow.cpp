@@ -49,14 +49,15 @@ infringement.
 #include <QCheckBox>
 #include <QScrollArea>
 #include <QFileDialog>
-#include "ChefDevr/BRDFMapDialog.h"
 #include <vector>
 #include "ParameterWindow.h"
 #include "FloatVarWidget.h"
 #include "ParameterGroupWidget.h"
 #include "BRDFBase.h"
 
-
+#include "ChefDevr/BRDFMapDialog.h"
+#include "ChefDevr/BRDFReconstructionModelWithZ.h"
+#include "ChefDevr/BRDFReconstructionModelSmallStorage.h"
 
 ParameterWindow::ParameterWindow()
 				: incidentThetaWidget(NULL),
@@ -163,7 +164,13 @@ void ParameterWindow::openBRDFFromFile()
 }
 
 void ParameterWindow::openBRDFFromMap(){
-    QPointF p =ChefDevr::BRDFMapDialog::getBRDFPos();
+    // TODO Dialog to prompt full or small ram usage
+    if (brdfModel == nullptr)
+    {
+        brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzData","brdfs3000"));
+    }
+    QPointF p = ChefDevr::BRDFMapDialog<Scalar>::getBRDFPos(brdfModel);
+    addBRDF(brdfModel->createBRDFFromLSCoord(p.x(), p.y()), true);
 }
 
 ParameterGroupWidget* ParameterWindow::addBRDFWidget( BRDFBase* b )
@@ -223,13 +230,17 @@ void ParameterWindow::openBRDFFiles( std::vector<std::string> files )
 void ParameterWindow::openBRDFFile( std::string filename, bool emitChanges )
 {
     BRDFBase* b = createBRDFFromFile( filename );
-    
+    addBRDF(b, emitChanges);
+}
+
+void ParameterWindow::addBRDF(BRDFBase* brdf, bool emitChanges)
+{
     // silently exit if nothing comes back
-    if( !b )
+    if( !brdf )
         return;
     
     // add the new widget to the top
-    ParameterGroupWidget* pgw = addBRDFWidget( b );
+    ParameterGroupWidget* pgw = addBRDFWidget( brdf );
         
     // if a BRDF is being soloed, we want to solo this new one instead
     if( soloBRDFWidget )
@@ -239,7 +250,6 @@ void ParameterWindow::openBRDFFile( std::string filename, bool emitChanges )
     else if( emitChanges )
         emitBRDFListChanged();
 }
-
 
 
 void ParameterWindow::soloBRDF( ParameterGroupWidget* pgw, bool withColors )

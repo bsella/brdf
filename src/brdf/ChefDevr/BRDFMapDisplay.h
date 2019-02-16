@@ -73,16 +73,22 @@ namespace ChefDevr
         void keyReleaseEvent (QKeyEvent*) override;
     };
 
+    template <typename Scalar>
     class BRDFMapView : public QGraphicsView{
     public:
-        explicit BRDFMapView(const BRDFReconstructionModel<double>*, QWidget* parent= nullptr);
+        explicit BRDFMapView(
+            const std::unique_ptr<BRDFReconstructionModel<Scalar>>& brdfModel,
+            QWidget* parent= nullptr);
+        
         ~BRDFMapView();
     private:
-        BRDFMapScene* scene=nullptr;
+        std::unique_ptr<BRDFMapScene> scene;
         void mousePressEvent  (QMouseEvent*);
         void mouseReleaseEvent(QMouseEvent*);
         void mouseMoveEvent   (QMouseEvent*);
     };
 } // namespace ChefDevr
+
+#include "BRDFMapDisplay.hpp"
 
 #endif // BRDFMAP_H

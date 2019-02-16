@@ -2,7 +2,7 @@
 #define BRDF_RECONSTRUCTED_H
 
 #include "BRDFMeasuredMERL.h"
-
+#include "Parametrisation.h"
 /**
  * @file BRDFReconstructed.h
  */
@@ -16,7 +16,22 @@ namespace ChefDevr
     */
     class BRDFReconstructed : public BRDFMeasuredMERL {
     public:
-        BRDFReconstructed();
+        /**
+         * @brief Constructor
+         * @param _numBRDFSamples Number of samples for the brdf
+         * @param _brdfData Data of the brdf
+         * 
+         * _brdfData should be allocated and contain the brdf data by the time
+         * the constructor is called.
+         * The object takes ownership of the pointer
+         */
+        BRDFReconstructed(int _numBRDFSamples, float* _brdfData) :
+            BRDFMeasuredMERL()
+        {
+            numBRDFSamples = _numBRDFSamples;
+            brdfData = _brdfData;    
+        }
+        
         /**
         * @brief Save the BRDF in a file
         *

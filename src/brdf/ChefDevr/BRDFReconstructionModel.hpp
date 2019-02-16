@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "MERLReader.h"
 
 namespace ChefDevr
 {
@@ -49,53 +50,21 @@ namespace ChefDevr
                 X[i*dim+j] = tmp;
             }
         }
-
-        uint num_brdfs = brdfNames.size();
-        const unsigned int num_coefficientsBRDF = 3 * 90 * 90 * 360 / 2;
-        Matrix<Scalar> Z{num_brdfs, num_coefficientsBRDF};
-
-        //const auto num_coefficients = num_brdfs * num_coefficientsBRDF;
-        //stxxl::vector<Scalar, 1> Z_stxxl;
-        //Z_stxxl.reserve(num_coefficients);
-
-        //auto Z_iterator = Z_stxxl.begin();
-        for (unsigned int i = 0; i < num_brdfs; ++i) {
-            Z.row(i) = read_brdf(num_coefficientsBRDF, (brdfFolderPath+"/"+brdfNames[i]).c_str());
-            // clamp negative values to zero
-            Z.row(i) = Z.row(i).cwiseMax(Scalar(0));
-
-            //StreamType input{brdf.begin(), brdf.end()};
-            //Z_iterator = stxxl::stream::materialize(input, Z_iterator);
-        }
+        
+        meanBRDF.resize(MERLReader::num_coefficientsBRDF);
     }
 
     template <typename Scalar>
-    RowVector<Scalar> BRDFReconstructionModel<Scalar>::read_brdf(const unsigned int num_coefficientsNeeded, const char *filePath) {
-        FILE *file = std::fopen(filePath, "rb");
-        if (!file) {
-            throw BRDFReconstructionModelError{std::string{"The file "} + filePath + " could not be opened"};
-        }
-
-        unsigned int dims[3];
-        std::fread(dims, sizeof(unsigned int), 3, file);
-        const unsigned int num_coefficients = dims[0] * dims[1] * dims[2] * 3;
-        if (num_coefficients != num_coefficientsNeeded) {
-            std::fclose(file);
-            throw BRDFReconstructionModelError{std::string{"Dimensions don't match : "} + std::to_string(num_coefficients) + " is not equal to " + std::to_string(num_coefficientsNeeded)};
-        }
-
-        RowVector<Scalar> brdf{num_coefficients};
-        std::fread(brdf.data(), sizeof(Scalar), num_coefficients, file);
-
-        std::fclose(file);
-
-        return brdf;
-    }
-
-
-    template <typename Scalar>
-    BRDFReconstructed BRDFReconstructionModel<Scalar>::createBRDFFromLSCoord (Scalar x, Scalar y) {
-        return BRDFReconstructed();
+    BRDFReconstructed* BRDFReconstructionModel<Scalar>::createBRDFFromLSCoord (Scalar x, Scalar y) const
+    {
+        int numBRDFSamples(brdfReconstructor->getBRDFCoeffNb());
+        float* brdfData = new float[numBRDFSamples];
+        Eigen::Map<RowVector<float>> brdf(brdfData, numBRDFSamples);
+        Vector<Scalar> coord; 
+        coord << x, y;
+        
+        brdfReconstructor->reconstruct(brdf, coord);
+        return new BRDFReconstructed(numBRDFSamples, brdfData);
     }
 
 

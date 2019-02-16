@@ -48,8 +48,10 @@ infringement.
 
 #include <QWidget>
 #include <vector>
+#include <memory>
 #include "BRDFBase.h"
 #include "ChefDevr/BRDFMapDisplay.h"
+#include "ChefDevr/BRDFReconstructionModel.h"
 
 class QSlider;
 class QLabel;
@@ -67,6 +69,7 @@ class QFileDialog;
  * @file ParameterWindow.h
  */
 
+using Scalar = float;
 
 class ParameterWindow : public QWidget
 {
@@ -80,6 +83,7 @@ public:
 
     void openBRDFFile( std::string, bool emitChanges = true );
     void openBRDFFiles( std::vector<std::string> );
+    void addBRDF(BRDFBase* brdf, bool emitChanges = true);
 
 signals:
     void redraw( std::vector<brdfPackage>, float theta, float phi, bool logPlot, bool nDotL );
@@ -126,8 +130,7 @@ private:
     
     QFrame* spaceFiller;
     
-    /** @brief Pointer to the map widget that allows choosing a BRDF from latent space coordinates */
-    //BRDFMapScene* brdfMapScene;
+    std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>> brdfModel;
     
     float theta, phi;
     bool useLogPlot;

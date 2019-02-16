@@ -4,18 +4,25 @@
 #include <QDialog>
 #include "BRDFMapDisplay.h"
 #include "BRDFReconstructionModel.h"
+#include <memory> 
 
 namespace ChefDevr{
+    
+    template <typename Scalar>
 	class BRDFMapDialog : public QDialog{
 		Q_OBJECT
 	public:
-		explicit BRDFMapDialog(QWidget* parent= nullptr);
+		explicit BRDFMapDialog(
+            const std::unique_ptr<BRDFReconstructionModel<Scalar>>& brdfModel,
+            QWidget* parent= nullptr);
+        
 		~BRDFMapDialog()override;
-		static QPointF getBRDFPos();
+		static QPointF getBRDFPos(const std::unique_ptr<BRDFReconstructionModel<Scalar>>& brdfModel);
 	private:
-		BRDFMapView* view;
-    	static const BRDFReconstructionModel<double> brdfModel;
+		std::unique_ptr<BRDFMapView<Scalar>> view;
 	};
 }
+
+#include "BRDFMapDialog.hpp"
 
 #endif

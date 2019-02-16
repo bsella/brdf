@@ -6,6 +6,7 @@
  */
 
 #include <string>
+#include <memory>
 
 #include "BRDFReconstructed.h"
 #include "Parametrisation.h"
@@ -25,7 +26,6 @@ namespace ChefDevr
     class BRDFReconstructionModel
     {
     public:
-        
         /**
          * @brief Constructor
          * @param paramtrzFilePath The path of the file that constains the parametrisation data
@@ -42,29 +42,35 @@ namespace ChefDevr
          * @param y the second coordinate of the BRDF in the latent space
          * @return the reconstructed BRDF
          */
-        BRDFReconstructed createBRDFFromLSCoord (Scalar x, Scalar y);
+        BRDFReconstructed* createBRDFFromLSCoord (Scalar x, Scalar y) const;
 
         class BRDFReconstructionModelError : public std::runtime_error {
         public:
             explicit BRDFReconstructionModelError(const std::string &message_error) :
             runtime_error{message_error} {}
         };
+        
+        const Vector<Scalar>& getX() const { return X; }
+        
+        const std::vector<std::string>& getBrdfNames() const { return brdfNames; }
+    
+    protected:
         /** 
          * @brief Latent variables column vector
          * 
          * Each stack of dim elements makes a latent variable
          */
         Vector<Scalar> X;
-
-        std::vector<std::string> brdfNames;
-    
-    private:        
+        
         /**
-         * @brief The BRDF matrix
-         *
-         * Each column contains the values of one BRDF
+         * @brief List of brdf names
          */
-        Matrix<Scalar> Z;
+        std::vector<std::string> brdfNames;
+        
+        /**
+         * @brief The mean brdf substracted from Z
+         */
+        RowVector<Scalar> meanBRDF;
         
         /**
          * @brief the matrix allowing to reconstruct a BRDF from its latent coordinates
@@ -74,7 +80,6 @@ namespace ChefDevr
          */
         Matrix<Scalar> K_minus1;
         
-        
         /** 
          * @brief Dimension of the latent space
          */
@@ -83,10 +88,7 @@ namespace ChefDevr
         /**
          * @brief The object that does BRDF reconstruction computations
          */
-        //BRDFReconstructor brdfReconstructor;
-
-        RowVector<Scalar> read_brdf(unsigned int num_coefficientsNeeded, const char *filePath);
-
+        std::unique_ptr<BRDFReconstructor<Scalar, float>> brdfReconstructor;
     };
 }// namespace ChefDevr
 

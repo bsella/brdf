@@ -74,6 +74,7 @@ private:
     GLuint tbo;
     GLuint tex;
 
+protected:
     int numBRDFSamples;
     float* brdfData;
         
