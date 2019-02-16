@@ -11,7 +11,7 @@ namespace ChefDevr
         
         BRDFReconstructionModel<Scalar>(paramtrzFilePath, brdfFolderPath)
         {
-            using BRDFRecType = BRDFReconstructorSmallStorage<Scalar, float>;
+            using BRDFRecType = BRDFReconstructorSmallStorage<Scalar, Scalar>;
             const auto& brdfNames(BRDFReconstructionModel<Scalar>::brdfNames);
             const auto& meanBRDF(BRDFReconstructionModel<Scalar>::meanBRDF);
             auto& reconstructor(BRDFReconstructionModel<Scalar>::brdfReconstructor);

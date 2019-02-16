@@ -12,7 +12,7 @@ namespace ChefDevr
         
         BRDFReconstructionModel<Scalar>(paramtrzFilePath, brdfFolderPath)
     {
-        using BRDFRecType = BRDFReconstructorWithZ<Scalar, float>;
+        using BRDFRecType = BRDFReconstructorWithZ<Scalar, Scalar>;
         const auto& brdfNames(BRDFReconstructionModel<Scalar>::brdfNames);
         auto& reconstructor(BRDFReconstructionModel<Scalar>::brdfReconstructor);
         auto& meanBRDF(BRDFReconstructionModel<Scalar>::meanBRDF);

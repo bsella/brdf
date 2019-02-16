@@ -69,7 +69,7 @@ class QFileDialog;
  * @file ParameterWindow.h
  */
 
-using Scalar = float;
+using Scalar = long double;
 
 class ParameterWindow : public QWidget
 {

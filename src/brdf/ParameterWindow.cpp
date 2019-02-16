@@ -167,7 +167,7 @@ void ParameterWindow::openBRDFFromMap(){
     // TODO Dialog to prompt full or small ram usage
     if (brdfModel == nullptr)
     {
-        brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzData","brdfs3000"));
+        brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzDataSmall","brdfs3000"));
     }
     QPointF p = ChefDevr::BRDFMapDialog<Scalar>::getBRDFPos(brdfModel);
     addBRDF(brdfModel->createBRDFFromLSCoord(p.x(), p.y()), true);

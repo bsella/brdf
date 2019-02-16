@@ -11,6 +11,7 @@
 #include "BRDFReconstructed.h"
 #include "Parametrisation.h"
 #include "types.h"
+#include "MERLReader.h"
 
 #include <iostream>
 #include <fstream>
@@ -42,7 +43,7 @@ namespace ChefDevr
          * @param y the second coordinate of the BRDF in the latent space
          * @return the reconstructed BRDF
          */
-        BRDFReconstructed* createBRDFFromLSCoord (Scalar x, Scalar y) const;
+        BRDFReconstructed<Scalar>* createBRDFFromLSCoord (Scalar x, Scalar y) const;
 
         class BRDFReconstructionModelError : public std::runtime_error {
         public:
@@ -88,7 +89,7 @@ namespace ChefDevr
         /**
          * @brief The object that does BRDF reconstruction computations
          */
-        std::unique_ptr<BRDFReconstructor<Scalar, float>> brdfReconstructor;
+        std::unique_ptr<BRDFReconstructor<Scalar, Scalar>> brdfReconstructor;
     };
 }// namespace ChefDevr
 

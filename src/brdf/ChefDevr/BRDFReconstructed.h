@@ -14,6 +14,7 @@ namespace ChefDevr
     * @brief A reconstructed BRDF, in the original space
     * Manipulable with BRDF Explorer
     */
+    template <typename Scalar>
     class BRDFReconstructed : public BRDFMeasuredMERL {
     public:
         /**
@@ -25,7 +26,7 @@ namespace ChefDevr
          * the constructor is called.
          * The object takes ownership of the pointer
          */
-        BRDFReconstructed(int _numBRDFSamples, float* _brdfData);
+        BRDFReconstructed(int _numBRDFSamples, const Scalar* _brdfData);
         
         /**
         * @brief Save the BRDF in a file
@@ -37,5 +38,7 @@ namespace ChefDevr
     private:
     };
 } // namespace ChefDevr
+
+#include "BRDFReconstructed.hpp"
 
 #endif
