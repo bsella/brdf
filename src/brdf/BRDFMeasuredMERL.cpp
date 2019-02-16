@@ -58,11 +58,6 @@ infringement.
 #include "DGLShader.h"
 #include "Paths.h"
 
-#define BRDF_SAMPLING_RES_THETA_H       90
-#define BRDF_SAMPLING_RES_THETA_D       90
-#define BRDF_SAMPLING_RES_PHI_D         360
-
-
 
 BRDFMeasuredMERL::BRDFMeasuredMERL()
                  : brdfData(NULL)
@@ -130,21 +125,13 @@ bool BRDFMeasuredMERL::loadMERLData( const char* filename )
     }
     fclose(f);
 
-    // now transform it to RGBA floats
-    brdfData = new float[ numBRDFSamples * 3 ];
-    for( int i = 0; i < numBRDFSamples; i++ )
-    {
-            brdfData[i*3 + 0] = brdf[i*3 + 0];
-            brdfData[i*3 + 1] = brdf[i*3 + 1];
-            brdfData[i*3 + 2] = brdf[i*3 + 2];
-    }
-
+    bool success(initBRDFData(brdf, numBRDFSamples*3));
+    
     // now we can dump the old data
     free( brdf );
 
-    return true;
+    return success;
 }
-
 
 void BRDFMeasuredMERL::initGL()
 {

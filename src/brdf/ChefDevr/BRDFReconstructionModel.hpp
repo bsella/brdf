@@ -57,14 +57,16 @@ namespace ChefDevr
     template <typename Scalar>
     BRDFReconstructed* BRDFReconstructionModel<Scalar>::createBRDFFromLSCoord (Scalar x, Scalar y) const
     {
-        int numBRDFSamples(brdfReconstructor->getBRDFCoeffNb());
-        float* brdfData = new float[numBRDFSamples];
-        Eigen::Map<RowVector<float>> brdf(brdfData, numBRDFSamples);
-        Vector<Scalar> coord; 
+        float* brdfData = new float[MERLReader::num_coefficientsBRDF];
+        Eigen::Map<RowVector<float>> brdf(brdfData, MERLReader::num_coefficientsBRDF);
+        Vector<Scalar> coord(2); 
         coord << x, y;
         
         brdfReconstructor->reconstruct(brdf, coord);
-        return new BRDFReconstructed(numBRDFSamples, brdfData);
+        BRDFReconstructed* brdfRec= new BRDFReconstructed(MERLReader::num_coefficientsBRDF, brdfData);
+        // BRDFReconstructed has its own data now
+        delete[] brdfData;
+        return brdfRec;
     }
 
 

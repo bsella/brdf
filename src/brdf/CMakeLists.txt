@@ -48,6 +48,7 @@ FILE(GLOB SOURCES
     ptex/PtexCache.cpp
     ptex/PtexHalf.cpp
     ChefDevr/*.cpp
+    ../../BRDF3000/src/Parametrisation/*.cpp
 )
 
 find_package(Qt5Widgets REQUIRED)

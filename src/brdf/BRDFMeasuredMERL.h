@@ -49,6 +49,10 @@ infringement.
 #include <string>
 #include "BRDFBase.h"
 
+#define BRDF_SAMPLING_RES_THETA_H       90
+#define BRDF_SAMPLING_RES_THETA_D       90
+#define BRDF_SAMPLING_RES_PHI_D         360
+
 class BRDFMeasuredMERL : public BRDFBase, public GLContext
 {
 public:
@@ -64,6 +68,17 @@ protected:
     virtual std::string getBRDFFunction();
 
     virtual void adjustShaderPreRender( DGLShader* );
+    
+    /**
+     * @brief Transforms MERL data to RGBA floats for rendering
+     * Allocates brdfData
+     * Sets brdfData and numBRDFSamples attributes
+     * @param brdf MERL BRDF data
+     * @param nbPtrValues Number of values allocated in the pointer
+     * @return success
+     */
+    template <typename Scalar>
+    bool initBRDFData(const Scalar* brdf, const int nbPtrValues);
 
 private:
     std::string brdfFunction;
@@ -73,12 +88,33 @@ private:
     // IDs needed for the texture buffer object
     GLuint tbo;
     GLuint tex;
-
-protected:
+    
     int numBRDFSamples;
     float* brdfData;
         
 };
 
+template <typename Scalar>
+bool BRDFMeasuredMERL::initBRDFData(const Scalar* brdf, const int nbPtrValues)
+{
+    if (nbPtrValues != 3 * BRDF_SAMPLING_RES_THETA_H *
+                            BRDF_SAMPLING_RES_THETA_D *
+                            BRDF_SAMPLING_RES_PHI_D / 2)
+    {
+        fprintf(stderr, "Dimensions don't match\n");
+        return false;
+    }
+    numBRDFSamples = nbPtrValues/3;
+    
+    // transform to RGBA floats
+    brdfData = new float[ numBRDFSamples * 3 ];
+    for( int i = 0; i < numBRDFSamples; ++i )
+    {
+            brdfData[i*3 + 0] = brdf[i*3 + 0];
+            brdfData[i*3 + 1] = brdf[i*3 + 1];
+            brdfData[i*3 + 2] = brdf[i*3 + 2];
+    }
+    return true;
+}
 
 #endif

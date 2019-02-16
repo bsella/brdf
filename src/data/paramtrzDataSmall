@@ -1,0 +1,17 @@
+# This file contains the results of an optimised parametrisation of the measured materials manifold
+# N5boost14multiprecision6numberINS0_8backends16float128_backendELNS0_26expression_template_optionE0EEE
+# inverse mapping matrix
+5 5
+   1.2341  0.202214  -2.26946  0.201288   1.48958
+ 0.202214   11.7406   7.65055  -3.30872  -16.8267
+ -2.26946   7.65055   4983.73   2.41122   -4990.7
+ 0.201288  -3.30872   2.41122   2.38907 -0.703065
+  1.48958  -16.8267   -4990.7 -0.703065   5006.55
+# latent variables
+5
+2
+chrome.binary         1 -0.999798
+cherry-235.binary  -0.219206 -0.0612145
+silver-metallic-paint2.binary -0.252051 -0.455249
+natural-209.binary -0.869956  0.481978
+pink-fabric.binary -0.252536 -0.453999

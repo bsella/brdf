@@ -10,7 +10,7 @@ namespace ChefDevr{
     
     template <typename Scalar>
 	class BRDFMapDialog : public QDialog{
-		Q_OBJECT
+		
 	public:
 		explicit BRDFMapDialog(
             const std::unique_ptr<BRDFReconstructionModel<Scalar>>& brdfModel,

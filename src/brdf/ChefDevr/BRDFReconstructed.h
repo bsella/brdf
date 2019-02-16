@@ -25,12 +25,7 @@ namespace ChefDevr
          * the constructor is called.
          * The object takes ownership of the pointer
          */
-        BRDFReconstructed(int _numBRDFSamples, float* _brdfData) :
-            BRDFMeasuredMERL()
-        {
-            numBRDFSamples = _numBRDFSamples;
-            brdfData = _brdfData;    
-        }
+        BRDFReconstructed(int _numBRDFSamples, float* _brdfData);
         
         /**
         * @brief Save the BRDF in a file

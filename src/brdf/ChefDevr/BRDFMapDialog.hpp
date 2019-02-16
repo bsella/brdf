@@ -1,4 +1,3 @@
-#include "BRDFMapDialog.h"
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
 
