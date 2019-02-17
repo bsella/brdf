@@ -48,7 +48,7 @@ FILE(GLOB SOURCES
     ptex/PtexCache.cpp
     ptex/PtexHalf.cpp
     ChefDevr/*.cpp
-    ../../BRDF3000/src/Parametrisation/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../BRDF3000/src/Parametrisation/*.cpp
 )
 
 find_package(Qt5Widgets REQUIRED)
@@ -68,7 +68,6 @@ include_directories(
    ${CMAKE_CURRENT_SOURCE_DIR}/../../BRDF3000/lib/Eigen/
 )
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
 
 add_executable(${APPLICATION}
 	${SOURCES}

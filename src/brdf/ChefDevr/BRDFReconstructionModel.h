@@ -89,7 +89,7 @@ namespace ChefDevr
         /**
          * @brief The object that does BRDF reconstruction computations
          */
-        std::unique_ptr<BRDFReconstructor<Scalar, Scalar>> brdfReconstructor;
+        std::unique_ptr<BRDFReconstructor<Scalar>> brdfReconstructor;
     };
 }// namespace ChefDevr
 
