@@ -50,6 +50,7 @@ infringement.
 #include <QScrollArea>
 #include <QFileDialog>
 #include <vector>
+#include <QtWidgets/QMessageBox>
 #include "ParameterWindow.h"
 #include "FloatVarWidget.h"
 #include "ParameterGroupWidget.h"
@@ -167,7 +168,26 @@ void ParameterWindow::openBRDFFromMap(){
     // TODO Dialog to prompt full or small ram usage
     if (brdfModel == nullptr)
     {
-        brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzDataSmall","brdfs3000"));
+        QString dir = QFileDialog::getExistingDirectory(this, tr("BRDFs Directory"),
+                                                        ".",
+                                                        QFileDialog::ShowDirsOnly
+                                                        | QFileDialog::DontResolveSymlinks);
+        QMessageBox dialog;
+        dialog.setText("Reconstruction Method");
+        dialog.setInformativeText("A fast creation of a new BRDF can take a lot of Ram ressources. "
+                                  "If you have a small amount of Ram available, we recommend you to"
+                                  "use the Small Ram method. Otherwise, the Fast Reconstruction method is good.");
+        QPushButton *smallRam = dialog.addButton(tr("Small Ram"), QMessageBox::ActionRole);
+        dialog.addButton(tr("Fast Reconstruction"), QMessageBox::ActionRole);
+
+        dialog.exec();
+
+        if (dialog.clickedButton() == (QAbstractButton*)(smallRam)) {
+            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelSmallStorage<Scalar>("data/paramtrzDataSmall", dir.toStdString()));
+        } else {
+            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzDataSmall",dir.toStdString()));
+        }
+
     }
     QPointF p = ChefDevr::BRDFMapDialog<Scalar>::getBRDFPos(brdfModel);
     addBRDF(brdfModel->createBRDFFromLSCoord(p.x(), p.y()), true);
