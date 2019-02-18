@@ -52,6 +52,8 @@ infringement.
 #include "BRDFBase.h"
 #include "ChefDevr/BRDFMapDisplay.h"
 #include "ChefDevr/BRDFReconstructionModel.h"
+#include <QThread>
+#include <QDialog>
 
 class QSlider;
 class QLabel;
@@ -141,5 +143,4 @@ private:
 
     QFileDialog* fileDialog;
 };
-
 #endif
