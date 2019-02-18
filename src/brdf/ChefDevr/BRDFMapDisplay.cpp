@@ -8,7 +8,7 @@
 namespace ChefDevr
 {
     static QFont _font;
-    BRDFMapScene::BRDFMapScene():QGraphicsScene(), _background(QPixmap("./images/map.bmp")){
+    BRDFMapScene::BRDFMapScene(float norm):QGraphicsScene(),norm(norm), _background(QPixmap("./images/map.bmp")){
         _font.setBold(true);
     }
 
@@ -18,7 +18,7 @@ namespace ChefDevr
 
     void BRDFMapScene::addPoint(const std::string& name, float x, float y){
         BRDFMapPoint *p = new BRDFMapPoint(name, Qt::red);
-        p->setPos(x*512,y*512);
+        p->setPos(x/norm*512,y/norm*512);
         addItem(p);
     }
     void BRDFMapScene::drawBackground (QPainter*p, const QRectF&){
@@ -49,7 +49,7 @@ namespace ChefDevr
             selected = new BRDFMapPoint("Selection", Qt::green);
             addItem(selected);
         }
-            selected->setPos(x*512, y*512);
+        selected->setPos(x/norm*512, y/norm*512);
     }
 
 } // namespace ChefDevr

@@ -18,7 +18,7 @@ namespace ChefDevr
     */
     class BRDFMapScene : public QGraphicsScene{
     public:
-        explicit BRDFMapScene();
+        explicit BRDFMapScene(float norm=4.f);
         ~BRDFMapScene () override;
         void setSelectedPoint(float x, float y);
         /**
@@ -30,7 +30,7 @@ namespace ChefDevr
         */
         void addPoint(const std::string& name, float x, float y);
     private:
-
+        const float norm;
         bool ctrlPressed=false;
 
         BRDFMapPoint* selected=nullptr;

@@ -13,7 +13,7 @@ namespace ChefDevr
         
         QGraphicsView(parent)
     {    
-        scene = std::unique_ptr<BRDFMapScene>(new BRDFMapScene);
+        scene = std::unique_ptr<BRDFMapScene>(new BRDFMapScene(4));
         setScene(scene.get());
         const auto& brdfNames(brdfModel->getBrdfNames());
         const auto& X(brdfModel->getX());
