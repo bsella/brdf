@@ -51,6 +51,8 @@ infringement.
 #include <QFileDialog>
 #include <vector>
 #include <QtWidgets/QMessageBox>
+#include <QtCore/QCoreApplication>
+#include <QApplication>
 #include "ParameterWindow.h"
 #include "FloatVarWidget.h"
 #include "ParameterGroupWidget.h"
@@ -59,6 +61,8 @@ infringement.
 #include "ChefDevr/BRDFMapDialog.h"
 #include "ChefDevr/BRDFReconstructionModelWithZ.h"
 #include "ChefDevr/BRDFReconstructionModelSmallStorage.h"
+#include "ChefDevr/ReconstructionThread.h"
+#include "ChefDevr/waitingspinnerwidget.h"
 
 ParameterWindow::ParameterWindow()
 				: incidentThetaWidget(NULL),
@@ -165,33 +169,39 @@ void ParameterWindow::openBRDFFromFile()
 }
 
 void ParameterWindow::openBRDFFromMap(){
-    // TODO Dialog to prompt full or small ram usage
     if (brdfModel == nullptr)
     {
-        QString dir = QFileDialog::getExistingDirectory(this, tr("BRDFs Directory"),
+        /*QString dir = QFileDialog::getExistingDirectory(this, tr("BRDFs Directory"),
                                                         ".",
                                                         QFileDialog::ShowDirsOnly
-                                                        | QFileDialog::DontResolveSymlinks);
+                                                        | QFileDialog::DontResolveSymlinks);*/
         QMessageBox dialog;
-        dialog.setText("Reconstruction Method");
-        dialog.setInformativeText("A fast creation of a new BRDF can take a lot of Ram ressources. "
+        dialog.setIcon(QMessageBox::Question);
+        dialog.setText("Reconstruction Method.");
+        dialog.setInformativeText("A fast creation of a new BRDF can take a lot of Ram ressources.\n"
                                   "If you have a small amount of Ram available, we recommend you to"
-                                  "use the Small Ram method. Otherwise, the Fast Reconstruction method is good.");
+                                  " use the Small Ram method.\nOtherwise, the Fast Reconstruction method is good.");
         QPushButton *smallRam = dialog.addButton(tr("Small Ram"), QMessageBox::ActionRole);
         dialog.addButton(tr("Fast Reconstruction"), QMessageBox::ActionRole);
 
         dialog.exec();
 
         if (dialog.clickedButton() == (QAbstractButton*)(smallRam)) {
-            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelSmallStorage<Scalar>("data/paramtrzDataSmall", dir.toStdString()));
+            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelSmallStorage<Scalar>("data/paramtrzDataSmall", "./brdfs3000"));
         } else {
-            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzDataSmall",dir.toStdString()));
+            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzDataSmall","./brdfs3000"));
         }
-
     }
     QPointF p = ChefDevr::BRDFMapDialog<Scalar>::getBRDFPos(brdfModel);
-    if(p.x()!=10)
-        addBRDF(brdfModel->createBRDFFromLSCoord(p.x(), p.y()), true);
+
+    ChefDevr::WaitingDisplay waitingDisplay;
+    ChefDevr::BRDFReconstructed<Scalar>* brdf;
+    RThread<Scalar> reconstructionThread(brdf, brdfModel.get(), p);
+    connect(&reconstructionThread, SIGNAL(finished()), &waitingDisplay, SLOT(accept()), Qt::QueuedConnection);
+    reconstructionThread.start();
+    waitingDisplay.exec();
+    reconstructionThread.wait();
+    addBRDF(brdf, true);
 }
 
 ParameterGroupWidget* ParameterWindow::addBRDFWidget( BRDFBase* b )
