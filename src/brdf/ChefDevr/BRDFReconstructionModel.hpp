@@ -1,10 +1,3 @@
-#include "BRDFReconstructionModel.h"
-
-#include <iostream>
-#include <string>
-#include <fstream>
-#include "MERLReader.h"
-
 namespace ChefDevr
 {
     template <typename Scalar>
@@ -57,11 +50,12 @@ namespace ChefDevr
     template <typename Scalar>
     BRDFReconstructed<Scalar>* BRDFReconstructionModel<Scalar>::createBRDFFromLSCoord (Scalar x, Scalar y) const
     {
+        const unsigned int num_coefficientsBRDF = MERLReader::num_coefficientsBRDF;
         Vector<Scalar> coord(2); 
         coord << x, y;
         
-        RowVector<Scalar> brdf(MERLReader::num_coefficientsBRDF);
+        RowVector<Scalar> brdf{num_coefficientsBRDF};
         brdfReconstructor->reconstruct(brdf, coord);
-        return new BRDFReconstructed<Scalar>(MERLReader::num_coefficientsBRDF, brdf.data());
+        return new BRDFReconstructed<Scalar>(num_coefficientsBRDF, brdf.data());
     }
 } // namespace ChefDevr

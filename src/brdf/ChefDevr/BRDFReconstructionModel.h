@@ -5,16 +5,17 @@
  * @file BRDFReconstructionModel.h
  */
 
+#include <iostream>
+#include <fstream>
+
 #include <string>
 #include <memory>
 
+#include "MERLReader.h"
 #include "BRDFReconstructed.h"
 #include "Parametrisation.h"
 #include "types.h"
-#include "MERLReader.h"
 
-#include <iostream>
-#include <fstream>
 
 namespace ChefDevr
 {
@@ -35,8 +36,8 @@ namespace ChefDevr
          * Loads K_minus1, X and Z from parametrisation data file
          */
         BRDFReconstructionModel(std::string paramtrzFilePath, std::string brdfFolderPath);
-        ~BRDFReconstructionModel() {}
-        
+        ~BRDFReconstructionModel() = default;
+
         /**
          * @brief Constructs a BRDF from its latent coordinates
          * @param x the first coordinate of the BRDF in the latent space

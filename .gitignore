@@ -16,3 +16,6 @@ Linux-*
 src/brdf/release
 src/brdf/debug
 build
+.idea/
+cmake-build-debug/
+data/

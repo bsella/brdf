@@ -59,12 +59,10 @@ set(CMAKE_AUTOUIC ON)
 
 #target_compile_definitions(PTEX_STATIC NOMINMAX)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lz")
-
 include_directories(
    ${Qt5Widgets_INCLUDES}
    ${Qt5OpenGL_INCLUDES}
-   ${CMAKE_CURRENT_SOURCE_DIR}/../../BRDF3000/src/Parametrisation/
+		${CMAKE_CURRENT_SOURCE_DIR}/../../BRDF3000/src/Parametrisation/
    ${CMAKE_CURRENT_SOURCE_DIR}/../../BRDF3000/lib/Eigen/
 )
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -76,5 +74,5 @@ add_executable(${APPLICATION}
 
 qt5_use_modules(${APPLICATION} Widgets OpenGL)
 
-set(EXT_LIBS ${QT_LIBRARIES} ${OPENGL_LIBRARIES})
+set(EXT_LIBS ${QT_LIBRARIES} ${OPENGL_LIBRARIES} "-lz")
 target_link_libraries(${APPLICATION} ${EXT_LIBS})
