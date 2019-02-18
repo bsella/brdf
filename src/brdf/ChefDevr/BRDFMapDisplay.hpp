@@ -52,5 +52,5 @@ namespace ChefDevr
         }
         click=false;
         QGraphicsView::mouseMoveEvent(e);
-    } 
+    }
 }

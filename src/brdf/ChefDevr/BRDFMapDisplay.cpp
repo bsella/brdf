@@ -55,7 +55,7 @@ namespace ChefDevr
             selected = new BRDFMapPoint("Selection", Qt::green);
             addItem(selected);
         }
-        selected->setPos(x/norm*512, y/norm*512);
+        selected->setPos(x*512, y*512);
     }
 
 } // namespace ChefDevr

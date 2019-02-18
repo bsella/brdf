@@ -29,11 +29,11 @@ namespace ChefDevr
         * @param y y position of the point (between 0 and 1)
         */
         void addPoint(const std::string& name, float x, float y);
+        BRDFMapPoint* selected=nullptr;
     private:
         const float norm;
         bool ctrlPressed=false;
 
-        BRDFMapPoint* selected=nullptr;
 
         /**
         * @brief Background image of the BRDF space reduced
@@ -79,10 +79,9 @@ namespace ChefDevr
         explicit BRDFMapView(
             const std::unique_ptr<BRDFReconstructionModel<Scalar>>& brdfModel,
             QWidget* parent= nullptr);
-        
         ~BRDFMapView();
-    private:
         std::unique_ptr<BRDFMapScene> scene;
+    private:
         void mousePressEvent  (QMouseEvent*);
         void mouseReleaseEvent(QMouseEvent*);
         void mouseMoveEvent   (QMouseEvent*);

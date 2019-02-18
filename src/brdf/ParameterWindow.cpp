@@ -190,7 +190,8 @@ void ParameterWindow::openBRDFFromMap(){
 
     }
     QPointF p = ChefDevr::BRDFMapDialog<Scalar>::getBRDFPos(brdfModel);
-    addBRDF(brdfModel->createBRDFFromLSCoord(p.x(), p.y()), true);
+    if(p.x()!=10)
+        addBRDF(brdfModel->createBRDFFromLSCoord(p.x(), p.y()), true);
 }
 
 ParameterGroupWidget* ParameterWindow::addBRDFWidget( BRDFBase* b )

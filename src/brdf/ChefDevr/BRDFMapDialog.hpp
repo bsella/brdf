@@ -40,7 +40,8 @@ namespace ChefDevr{
 		BRDFMapDialog<Scalar> diag(brdfModel);
 		//if(diag.exec() && diag.scene && diag.scene->selected)
 		//	return diag.scene->selected->pos();
-		diag.exec();
-		return QPointF(2,2);
+		if(diag.exec() && diag.view->scene->selected)
+			return diag.view->scene->selected->pos()/512.f*4;
+		return QPointF(10,0);
 	}
 }
