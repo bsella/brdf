@@ -5,6 +5,7 @@ set(APPLICATION brdfExp3000)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -fopenmp")
 
+
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 FILE(GLOB HEADERS
@@ -75,4 +76,5 @@ add_executable(${APPLICATION}
 qt5_use_modules(${APPLICATION} Widgets OpenGL)
 
 set(EXT_LIBS ${QT_LIBRARIES} ${OPENGL_LIBRARIES} "-lz")
+
 target_link_libraries(${APPLICATION} ${EXT_LIBS})
