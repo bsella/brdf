@@ -15,6 +15,7 @@ namespace ChefDevr
     */
     class BRDFMapPoint : public QGraphicsItem{
     public:
+        explicit BRDFMapPoint ();
         explicit BRDFMapPoint (const std::string& name, QColor clr);
         ~BRDFMapPoint () override;
         inline std::string name()const{return _name;}
@@ -26,6 +27,7 @@ namespace ChefDevr
         const std::string _name;
 
         const QColor _clr;
+        const bool visible;
         /**
         * @brief Override of base class QGraphicsItem's
         * fuction : boundingRect

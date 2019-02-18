@@ -10,6 +10,12 @@ namespace ChefDevr
     static QFont _font;
     BRDFMapScene::BRDFMapScene(float norm):QGraphicsScene(),norm(norm), _background(QPixmap("./images/map.bmp")){
         _font.setBold(true);
+        BRDFMapPoint* tmp= new BRDFMapPoint;
+        tmp->setPos(-512,-512);
+        addItem(tmp);
+        tmp= new BRDFMapPoint;
+        tmp->setPos(512,512);
+        addItem(tmp);
     }
 
     BRDFMapScene::~BRDFMapScene(){

@@ -5,7 +5,8 @@
 
 namespace ChefDevr{
 	BRDFMapPoint* BRDFMapPoint::hover = nullptr;
-	BRDFMapPoint::BRDFMapPoint(const std::string& name, QColor clr): _name(name), _clr(clr){
+	BRDFMapPoint::BRDFMapPoint(): _name(""), _clr(Qt::white), visible(false){}
+	BRDFMapPoint::BRDFMapPoint(const std::string& name, QColor clr): _name(name), _clr(clr),visible(true){
 		setAcceptHoverEvents(true);
 	}
 	BRDFMapPoint::~BRDFMapPoint(){}
@@ -15,13 +16,15 @@ namespace ChefDevr{
 	}
 
 	void BRDFMapPoint::paint(QPainter* pnt, const QStyleOptionGraphicsItem*, QWidget*){
-		QRectF r= boundingRect();
-		pnt->setPen(QPen(Qt::black,3));
-		pnt->drawLine(r.x(), r.y(), r.x()+r.width(), r.y()+r.height());
-		pnt->drawLine(r.x()+r.width(), r.y(), r.x(), r.y()+r.height());
-		pnt->setPen(QPen(_clr,2));
-		pnt->drawLine(r.x(), r.y(), r.x()+r.width(), r.y()+r.height());
-		pnt->drawLine(r.x()+r.width(), r.y(), r.x(), r.y()+r.height());
+		if(visible){
+			QRectF r= boundingRect();
+			pnt->setPen(QPen(Qt::black,3));
+			pnt->drawLine(r.x(), r.y(), r.x()+r.width(), r.y()+r.height());
+			pnt->drawLine(r.x()+r.width(), r.y(), r.x(), r.y()+r.height());
+			pnt->setPen(QPen(_clr,2));
+			pnt->drawLine(r.x(), r.y(), r.x()+r.width(), r.y()+r.height());
+			pnt->drawLine(r.x()+r.width(), r.y(), r.x(), r.y()+r.height());
+		}
 	}
 
 	void BRDFMapPoint::hoverEnterEvent(QGraphicsSceneHoverEvent*){
