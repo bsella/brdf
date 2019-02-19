@@ -119,6 +119,8 @@ private:
     void createLayout();
     ParameterGroupWidget* addBRDFWidget( BRDFBase* b );
     void setBRDFColorMask( brdfPackage& pkg );
+
+    void setBRDFModel ();
     
     FloatVarWidget* incidentThetaWidget;
     FloatVarWidget* incidentPhiWidget;

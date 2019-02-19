@@ -171,38 +171,47 @@ void ParameterWindow::openBRDFFromFile()
 void ParameterWindow::openBRDFFromMap(){
     if (brdfModel == nullptr)
     {
-        /*QString dir = QFileDialog::getExistingDirectory(this, tr("BRDFs Directory"),
-                                                        ".",
-                                                        QFileDialog::ShowDirsOnly
-                                                        | QFileDialog::DontResolveSymlinks);*/
-        QMessageBox dialog;
-        dialog.setIcon(QMessageBox::Question);
-        dialog.setText("Reconstruction Method.");
-        dialog.setInformativeText("A fast creation of a new BRDF can take a lot of Ram ressources.\n"
-                                  "If you have a small amount of Ram available, we recommend you to"
-                                  " use the Small Ram method.\nOtherwise, the Fast Reconstruction method is good.");
-        QPushButton *smallRam = dialog.addButton(tr("Small Ram"), QMessageBox::ActionRole);
-        dialog.addButton(tr("Fast Reconstruction"), QMessageBox::ActionRole);
-
-        dialog.exec();
-
-        if (dialog.clickedButton() == (QAbstractButton*)(smallRam)) {
-            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelSmallStorage<Scalar>("data/paramtrzDataPrecision", "./brdfs3000"));
-        } else {
-            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzDataPrecision","./brdfs3000"));
-        }
+        setBRDFModel();
     }
     QPointF p = ChefDevr::BRDFMapDialog<Scalar>::getBRDFPos(brdfModel);
 
     ChefDevr::WaitingDisplay waitingDisplay;
     ChefDevr::BRDFReconstructed<Scalar>* brdf;
+
     RThread<Scalar> reconstructionThread(brdf, brdfModel.get(), p);
     connect(&reconstructionThread, SIGNAL(finished()), &waitingDisplay, SLOT(accept()), Qt::QueuedConnection);
     reconstructionThread.start();
     waitingDisplay.exec();
     reconstructionThread.wait();
+
     addBRDF(brdf, true);
 }
+
+
+void ParameterWindow::setBRDFModel () {
+    /*QString dir = QFileDialog::getExistingDirectory(this, tr("BRDFs Directory"),
+                                                    ".",
+                                                    QFileDialog::ShowDirsOnly
+                                                    | QFileDialog::DontResolveSymlinks);*/
+
+    QMessageBox dialog;
+    dialog.setIcon(QMessageBox::Question);
+    dialog.setText("Reconstruction Method.");
+    dialog.setInformativeText("A fast creation of a new BRDF can take a lot of Ram ressources.\n"
+                              "If you have a small amount of Ram available, we recommend you to"
+                              " use the Small Ram method.\nOtherwise, the Fast Reconstruction method is good.");
+    QPushButton *smallRam = dialog.addButton(tr("Small Ram"), QMessageBox::ActionRole);
+    dialog.addButton(tr("Fast Reconstruction"), QMessageBox::ActionRole);
+
+    dialog.exec();
+
+    if (dialog.clickedButton() == (QAbstractButton*)(smallRam)) {
+        brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelSmallStorage<Scalar>("data/paramtrzDataPrecision", "./brdfs3000"));
+    } else {
+        brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzDataPrecision","./brdfs3000"));
+    }
+}
+
 
 ParameterGroupWidget* ParameterWindow::addBRDFWidget( BRDFBase* b )
 {
