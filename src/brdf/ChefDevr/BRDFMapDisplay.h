@@ -34,7 +34,6 @@ namespace ChefDevr
         const float norm;
         bool ctrlPressed=false;
 
-
         /**
         * @brief Background image of the BRDF space reduced
         * in a 2D image
@@ -82,9 +81,11 @@ namespace ChefDevr
         ~BRDFMapView();
         std::unique_ptr<BRDFMapScene> scene;
     private:
+        int zoom=0;
         void mousePressEvent  (QMouseEvent*);
         void mouseReleaseEvent(QMouseEvent*);
         void mouseMoveEvent   (QMouseEvent*);
+        void wheelEvent       (QWheelEvent*);
     };
 } // namespace ChefDevr
 

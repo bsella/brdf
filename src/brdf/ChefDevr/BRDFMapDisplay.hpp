@@ -1,8 +1,7 @@
-
 #include <QPainter>
 #include <QMouseEvent>
+#include <QWheelEvent>
 #include <QScrollBar>
-#include <iostream>
 
 namespace ChefDevr
 {    
@@ -42,7 +41,6 @@ namespace ChefDevr
         if(click && tmp.x()>-1 && tmp.x()<1 && tmp.y()>-1 && tmp.y()<1)
             scene->setSelectedPoint(tmp.x(),tmp.y());
     }
-    
     template <typename Scalar>
     void BRDFMapView<Scalar>::mouseMoveEvent(QMouseEvent*e){
         if(press){
@@ -52,5 +50,20 @@ namespace ChefDevr
         }
         click=false;
         QGraphicsView::mouseMoveEvent(e);
+    }
+
+    template <typename Scalar>
+    void BRDFMapView<Scalar>::wheelEvent(QWheelEvent*e){
+        if(e->delta()>0){
+            if(zoom<14){
+                scale(1.1,1.1);
+                zoom++;
+            }
+        }
+        else
+            if(zoom>-7){
+                scale(1/1.1,1/1.1);
+                zoom--;
+            }
     }
 }
