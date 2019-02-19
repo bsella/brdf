@@ -215,15 +215,17 @@ void ParameterWindow::openBRDFFromMap(){
         
     }
     QPointF p = ChefDevr::BRDFMapDialog<Scalar>::getBRDFPos(brdfModel);
-
-    ChefDevr::WaitingDisplay waitingDisplay;
-    ChefDevr::BRDFReconstructed<Scalar>* brdf;
-    RThread<Scalar> reconstructionThread(brdf, brdfModel.get(), p);
-    connect(&reconstructionThread, SIGNAL(finished()), &waitingDisplay, SLOT(accept()), Qt::QueuedConnection);
-    reconstructionThread.start();
-    waitingDisplay.exec();
-    reconstructionThread.wait();
-    addBRDF(brdf, true);
+    if (p.x() < 8.)
+    {
+        ChefDevr::WaitingDisplay waitingDisplay;
+        ChefDevr::BRDFReconstructed<Scalar>* brdf;
+        RThread<Scalar> reconstructionThread(brdf, brdfModel.get(), p);
+        connect(&reconstructionThread, SIGNAL(finished()), &waitingDisplay, SLOT(accept()), Qt::QueuedConnection);
+        reconstructionThread.start();
+        waitingDisplay.exec();
+        reconstructionThread.wait();
+        addBRDF(brdf, true);
+    }
 }
 
 ParameterGroupWidget* ParameterWindow::addBRDFWidget( BRDFBase* b )
