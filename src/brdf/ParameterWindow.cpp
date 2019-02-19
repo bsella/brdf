@@ -49,6 +49,9 @@ infringement.
 #include <QCheckBox>
 #include <QScrollArea>
 #include <QFileDialog>
+#include <QLabel>
+#include <QFormLayout>
+#include <QProgressBar>
 #include <vector>
 #include <QtWidgets/QMessageBox>
 #include <QtCore/QCoreApplication>
@@ -173,18 +176,20 @@ void ParameterWindow::openBRDFFromMap(){
     {
         setBRDFModel();
     }
+
     QPointF p = ChefDevr::BRDFMapDialog<Scalar>::getBRDFPos(brdfModel);
 
-    ChefDevr::WaitingDisplay waitingDisplay;
-    ChefDevr::BRDFReconstructed<Scalar>* brdf;
-
-    RThread<Scalar> reconstructionThread(brdf, brdfModel.get(), p);
-    connect(&reconstructionThread, SIGNAL(finished()), &waitingDisplay, SLOT(accept()), Qt::QueuedConnection);
-    reconstructionThread.start();
-    waitingDisplay.exec();
-    reconstructionThread.wait();
-
-    addBRDF(brdf, true);
+    if (p.x() < 8.)
+    {
+        ChefDevr::WaitingDisplay waitingDisplay;
+        ChefDevr::BRDFReconstructed<Scalar>* brdf;
+        RThread<Scalar> reconstructionThread(brdf, brdfModel.get(), p);
+        connect(&reconstructionThread, SIGNAL(finished()), &waitingDisplay, SLOT(accept()), Qt::QueuedConnection);
+        reconstructionThread.start();
+        waitingDisplay.exec();
+        reconstructionThread.wait();
+        addBRDF(brdf, true);
+    }
 }
 
 
@@ -193,23 +198,40 @@ void ParameterWindow::setBRDFModel () {
                                                     ".",
                                                     QFileDialog::ShowDirsOnly
                                                     | QFileDialog::DontResolveSymlinks);*/
-
     QMessageBox dialog;
     dialog.setIcon(QMessageBox::Question);
-    dialog.setText("Reconstruction Method.");
-    dialog.setInformativeText("A fast creation of a new BRDF can take a lot of Ram ressources.\n"
-                              "If you have a small amount of Ram available, we recommend you to"
-                              " use the Small Ram method.\nOtherwise, the Fast Reconstruction method is good.");
-    QPushButton *smallRam = dialog.addButton(tr("Small Ram"), QMessageBox::ActionRole);
-    dialog.addButton(tr("Fast Reconstruction"), QMessageBox::ActionRole);
+    dialog.setText("Please choose a storage policy");
+    dialog.setInformativeText("Economic :\nLow memory usage\nSlow initial data loading time and BRDFs reconstruction.\n\n"
+                              "Performant :\nHigh memory usage (7.5GB)\nFast initial data loading time and BRDFs reconstruction.");
+    QPushButton *smallRam = dialog.addButton(tr("Economic"), QMessageBox::ActionRole);
+    dialog.addButton(tr("Performant"), QMessageBox::ActionRole);
 
     dialog.exec();
 
+
+    int progress(0);
+    auto * progressBar = new QProgressBar();
+    QLabel* label = new QLabel("Data is loading, please wait...");
+    QDialog progressDialog;
+    auto * layout = new QFormLayout();
+    layout->addWidget(label);
+    layout->addWidget(progressBar);
+    layout->setSizeConstraint( QLayout::SetFixedSize );
+    progressDialog.setLayout(layout);
+
+    ChefDevr::BRDFModelInitThread<Scalar> t(brdfModel);
+
     if (dialog.clickedButton() == (QAbstractButton*)(smallRam)) {
         brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelSmallStorage<Scalar>("data/paramtrzDataPrecision", "./brdfs3000"));
+
     } else {
         brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzDataPrecision","./brdfs3000"));
     }
+    connect(brdfModel.get(), SIGNAL(initRange(int, int)), progressBar, SLOT(setRange(int, int)));
+    connect(brdfModel.get(), SIGNAL(progressChanged(int)),  progressBar, SLOT(setValue(int)));
+    connect(&t, SIGNAL(finished()), &progressDialog, SLOT(accept()));
+    t.start();
+    progressDialog.exec();
 }
 
 

@@ -10,6 +10,8 @@ namespace ChefDevr
     {
     public:
         BRDFReconstructionModelSmallStorage(std::string paramtrzFilePath, std::string brdfFolderPath);
+        
+        void init() override;
     private:
         /**
          * @brief the list of BRDF filePaths in the order in which they were read

@@ -11,6 +11,7 @@ namespace ChefDevr
     public:
         BRDFReconstructionModelWithZ(std::string paramtrzFilePath, std::string brdfFolderPath);
         
+        void init() override;
     private:
         /**
         * @brief BRDF data matrix 

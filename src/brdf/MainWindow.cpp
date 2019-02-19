@@ -154,7 +154,7 @@ MainWindow::MainWindow()
 
     QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
     QAction* openBRDF = fileMenu->addAction( "Open BRDF..." );
-    QAction* chooseBRDF = fileMenu->addAction( "Choose BRDF..." );
+    QAction* chooseBRDF = fileMenu->addAction( "Choose BRDF from Map..." );
     openBRDF->setShortcut( QKeySequence("Ctrl+O") );
     connect( openBRDF, SIGNAL(triggered()), paramWnd, SLOT(openBRDFFromFile()) );
     connect( chooseBRDF, SIGNAL(triggered()), paramWnd, SLOT(openBRDFFromMap()) );
