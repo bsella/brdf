@@ -30,5 +30,11 @@ namespace ChefDevr
             meanBRDF /= num_brdfs;
             
             reconstructor = std::unique_ptr<BRDFRecType>(new BRDFRecType(K_minus1, X, meanBRDF, dim, brdf_filePaths));
+
+            for (unsigned int i(0); i < 5; ++i)
+            {
+                std::cout << "Reconstruction error for " << brdfNames[i] <<  " : " << reconstructor->reconstructionError(i) << std::endl;
+            }
+            std::cout << std::endl;
         }
 }
