@@ -8,6 +8,7 @@
 #include "BRDFMapPoint.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QPainterPath>
 #include <string>
 #include "BRDFReconstructionModel.h"
 

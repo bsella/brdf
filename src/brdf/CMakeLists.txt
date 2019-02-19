@@ -53,6 +53,7 @@ FILE(GLOB SOURCES
 
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5OpenGL REQUIRED)
+find_package(Qt5Svg REQUIRED)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
@@ -72,7 +73,7 @@ add_executable(${APPLICATION}
 	${HEADERS}
 )
 
-qt5_use_modules(${APPLICATION} Widgets OpenGL)
+qt5_use_modules(${APPLICATION} Widgets OpenGL Svg)
 
 set(EXT_LIBS ${QT_LIBRARIES} ${OPENGL_LIBRARIES} "-lz")
 target_link_libraries(${APPLICATION} ${EXT_LIBS})

@@ -4,11 +4,14 @@
 #include <QMouseEvent>
 #include <QScrollBar>
 #include <iostream>
+#include <QGraphicsSvgItem>
 
 namespace ChefDevr
 {
     static QFont _font;
-    BRDFMapScene::BRDFMapScene(float norm):QGraphicsScene(),norm(norm), _background(QPixmap("./images/map.bmp")){
+    BRDFMapScene::BRDFMapScene(float norm):QGraphicsScene(),
+    norm(norm),
+    _background(QPixmap("./images/map.bmp")){
         _font.setBold(true);
         BRDFMapPoint* tmp= new BRDFMapPoint;
         tmp->setPos(-512,-512);
@@ -16,6 +19,13 @@ namespace ChefDevr
         tmp= new BRDFMapPoint;
         tmp->setPos(512,512);
         addItem(tmp);
+
+        QGraphicsSvgItem* isolines = new QGraphicsSvgItem("images/isolines.svg");
+        isolines->setPos(-512,-512);
+        isolines->setScale(1.07);
+        addItem(isolines);
+        // isolines.moveTo(22,-512);
+        // isolines.cubicTo(22,-512, 98,-477, 113,-376);
     }
 
     BRDFMapScene::~BRDFMapScene(){
