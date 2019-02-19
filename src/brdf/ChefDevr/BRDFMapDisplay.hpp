@@ -38,7 +38,8 @@ namespace ChefDevr
     void BRDFMapView<Scalar>::mouseReleaseEvent(QMouseEvent*e){
         press=false;
         const QPointF tmp= mapToScene(e->pos())/512;
-        scene->setSelectedPoint(tmp.x(),tmp.y());
+        if(click)
+            scene->setSelectedPoint(tmp.x(),tmp.y());
     }
     template <typename Scalar>
     void BRDFMapView<Scalar>::mouseMoveEvent(QMouseEvent*e){
