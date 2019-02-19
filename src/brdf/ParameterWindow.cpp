@@ -202,10 +202,10 @@ void ParameterWindow::openBRDFFromMap(){
         ChefDevr::BRDFModelInitThread<Scalar> t(brdfModel);
         
         if (dialog.clickedButton() == (QAbstractButton*)(smallRam)) {
-            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelSmallStorage<Scalar>("data/paramtrzDataPrecision", "./brdfs3000"));
+            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelSmallStorage<Scalar>("data/paramtrzData", "./brdfs3000"));
             
         } else {
-            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzDataPrecision","./brdfs3000"));
+            brdfModel = std::unique_ptr<ChefDevr::BRDFReconstructionModel<Scalar>>(new ChefDevr::BRDFReconstructionModelWithZ<Scalar>("data/paramtrzData","./brdfs3000"));
         }
         connect(brdfModel.get(), SIGNAL(initRange(int, int)), progressBar, SLOT(setRange(int, int)));
         connect(brdfModel.get(), SIGNAL(progressChanged(int)),  progressBar, SLOT(setValue(int)));
