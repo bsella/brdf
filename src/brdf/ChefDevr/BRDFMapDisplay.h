@@ -30,6 +30,7 @@ namespace ChefDevr
         */
         void addPoint(const std::string& name, float x, float y);
         BRDFMapPoint* selected=nullptr;
+        void setFontSize(int);
     private:
         const float norm;
         bool ctrlPressed=false;

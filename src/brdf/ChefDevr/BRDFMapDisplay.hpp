@@ -38,8 +38,7 @@ namespace ChefDevr
     void BRDFMapView<Scalar>::mouseReleaseEvent(QMouseEvent*e){
         press=false;
         const QPointF tmp= mapToScene(e->pos())/512;
-        if(click && tmp.x()>-1 && tmp.x()<1 && tmp.y()>-1 && tmp.y()<1)
-            scene->setSelectedPoint(tmp.x(),tmp.y());
+        scene->setSelectedPoint(tmp.x(),tmp.y());
     }
     template <typename Scalar>
     void BRDFMapView<Scalar>::mouseMoveEvent(QMouseEvent*e){
@@ -54,16 +53,21 @@ namespace ChefDevr
 
     template <typename Scalar>
     void BRDFMapView<Scalar>::wheelEvent(QWheelEvent*e){
+        static float current_scale = 1.f;
         if(e->delta()>0){
-            if(zoom<14){
+            if(zoom<30){
                 scale(1.1,1.1);
                 zoom++;
+                current_scale*=1.1;
+                scene->setFontSize(20/current_scale);
             }
         }
         else
             if(zoom>-7){
                 scale(1/1.1,1/1.1);
                 zoom--;
+                current_scale/=1.1;
+                scene->setFontSize(20/current_scale);
             }
     }
 }

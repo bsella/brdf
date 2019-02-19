@@ -5,8 +5,11 @@
 
 namespace ChefDevr{
 	BRDFMapPoint* BRDFMapPoint::hover = nullptr;
-	BRDFMapPoint::BRDFMapPoint(): _name(""), _clr(Qt::white), visible(false){}
+	BRDFMapPoint::BRDFMapPoint(): _name(""), _clr(Qt::white), visible(false){
+		setFlags(QGraphicsItem::ItemIgnoresTransformations);
+	}
 	BRDFMapPoint::BRDFMapPoint(const std::string& name, QColor clr): _name(name), _clr(clr),visible(true){
+		setFlags(QGraphicsItem::ItemIgnoresTransformations);
 		setAcceptHoverEvents(true);
 	}
 	BRDFMapPoint::~BRDFMapPoint(){}

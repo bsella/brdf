@@ -57,5 +57,8 @@ namespace ChefDevr
         }
         selected->setPos(x*512, y*512);
     }
+    void BRDFMapScene::setFontSize(int s){
+        _font.setPixelSize(s);
+    }
 
 } // namespace ChefDevr
