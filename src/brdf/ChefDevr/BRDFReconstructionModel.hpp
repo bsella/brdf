@@ -1,11 +1,12 @@
 namespace ChefDevr
 {
     template <typename Scalar>
-    BRDFReconstructionModel<Scalar>::BRDFReconstructionModel(std::string paramtrzFilePath, std::string brdfFolderPath)
+    BRDFReconstructionModel<Scalar>::BRDFReconstructionModel(std::string paramtrzFilePath, std::string _brdfFolderPath)
     {
 
         std::ifstream file_param(paramtrzFilePath);
-
+        brdfFolderPath = _brdfFolderPath;
+        
         if (!file_param.is_open()){
             std::cerr << "Could not read file \"" << paramtrzFilePath<< "\"" << std::endl;
             return;

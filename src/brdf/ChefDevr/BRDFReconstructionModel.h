@@ -16,16 +16,26 @@
 #include "Parametrisation.h"
 #include "types.h"
 
+#include <QThread>
+#include <QObject>
 
 namespace ChefDevr
 {
+    class ProgressInterface : public QObject
+    {
+        Q_OBJECT
+    signals:
+        void initRange(int min, int max);
+        void progressChanged(int progress);
+    };
+    
     /**
      * @brief The class that allows reconstruction of BRDFs in the BRDF Explorer format
      * @tparam Scalar The type of the values used to reconstruct a BRDF.
      * The precision of this type is crucial to reconstruct an accurate BRDF from the latent space.
      */
     template <typename Scalar>
-    class BRDFReconstructionModel
+    class BRDFReconstructionModel : public ProgressInterface
     {
     public:
         /**
@@ -37,7 +47,9 @@ namespace ChefDevr
          */
         BRDFReconstructionModel(std::string paramtrzFilePath, std::string brdfFolderPath);
         ~BRDFReconstructionModel() = default;
-
+        
+        virtual void init() = 0;
+        
         /**
          * @brief Constructs a BRDF from its latent coordinates
          * @param x the first coordinate of the BRDF in the latent space
@@ -52,9 +64,11 @@ namespace ChefDevr
             runtime_error{message_error} {}
         };
         
-        const Vector<Scalar>& getX() const { return X; }
+        inline const Vector<Scalar>& getX() const { return X; }
         
-        const std::vector<std::string>& getBrdfNames() const { return brdfNames; }
+        inline const std::vector<std::string>& getBrdfNames() const { return brdfNames; }
+        
+        inline int getBrdfNumber() const { return brdfNames.size(); }
     
     protected:
         /** 
@@ -91,6 +105,26 @@ namespace ChefDevr
          * @brief The object that does BRDF reconstruction computations
          */
         std::unique_ptr<BRDFReconstructor<Scalar>> brdfReconstructor;
+        
+        std::string brdfFolderPath;
+    };
+    
+    template <typename Scalar>
+    class BRDFModelInitThread : public QThread
+    {
+    public:
+        BRDFModelInitThread (std::unique_ptr<BRDFReconstructionModel<Scalar>>& _brdfModel) :
+            
+            QThread(),
+            brdfModel(_brdfModel)
+        {}
+        
+    protected:
+        void run() override{
+            brdfModel->init();
+        }
+            
+        std::unique_ptr<BRDFReconstructionModel<Scalar>>& brdfModel;
     };
 }// namespace ChefDevr
 
