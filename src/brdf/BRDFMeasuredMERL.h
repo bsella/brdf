@@ -80,6 +80,9 @@ protected:
     template <typename Scalar>
     bool initBRDFData(const Scalar* brdf, const int nbPtrValues);
 
+protected:
+    float* brdfData;
+
 private:
     std::string brdfFunction;
 
@@ -88,10 +91,8 @@ private:
     // IDs needed for the texture buffer object
     GLuint tbo;
     GLuint tex;
-    
+
     int numBRDFSamples;
-    float* brdfData;
-        
 };
 
 template <typename Scalar>

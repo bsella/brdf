@@ -81,6 +81,11 @@ BRDFMeasuredMERL::~BRDFMeasuredMERL()
 {
     glf->glBindBuffer(GL_TEXTURE_BUFFER, tbo);
     glf->glDeleteBuffers( 1, &tbo);
+
+    if (brdfData != nullptr) {
+        delete[] brdfData;
+        brdfData = nullptr;
+    }
 }
 
 
@@ -159,9 +164,6 @@ void BRDFMeasuredMERL::initGL()
     memcpy( p, brdfData, numBytes );
     glf->glUnmapBuffer(GL_TEXTURE_BUFFER);
     glf->glBindBuffer(GL_TEXTURE_BUFFER, 0);
-
-    delete[] brdfData;
-    brdfData = NULL;
 
     initializedGL = true;
 }

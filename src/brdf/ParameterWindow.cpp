@@ -52,6 +52,7 @@ infringement.
 #include <QLabel>
 #include <QFormLayout>
 #include <QProgressBar>
+#include <QAction>
 #include <vector>
 #include <QtWidgets/QMessageBox>
 #include <QtCore/QCoreApplication>
@@ -67,14 +68,15 @@ infringement.
 #include "ChefDevr/ReconstructionThread.h"
 #include "ChefDevr/waitingspinnerwidget.h"
 
-ParameterWindow::ParameterWindow()
+ParameterWindow::ParameterWindow(QAction* button_saveBRDF)
 				: incidentThetaWidget(NULL),
                   incidentPhiWidget(NULL),
                   cmdLayout(NULL),
 			      channelComboBox(NULL),
                   logPlotCheckbox(NULL), nDotLCheckbox(NULL),
                   soloBRDFWidget(NULL),
-                  soloBRDFUsesColors(false)
+                  soloBRDFUsesColors(false),
+                  button_saveBRDF{button_saveBRDF}
 {
 	theta = 0.785398163;
 	phi = 0.785398163;
@@ -182,7 +184,6 @@ void ParameterWindow::openBRDFFromMap(){
     if (p.x() < 8.)
     {
         ChefDevr::WaitingDisplay waitingDisplay;
-        ChefDevr::BRDFReconstructed<Scalar>* brdf;
         RThread<Scalar> reconstructionThread(brdf, brdfModel.get(), p);
         connect(&reconstructionThread, SIGNAL(finished()), &waitingDisplay, SLOT(accept()), Qt::QueuedConnection);
         reconstructionThread.start();
@@ -232,6 +233,12 @@ void ParameterWindow::setBRDFModel () {
     connect(&t, SIGNAL(finished()), &progressDialog, SLOT(accept()));
     t.start();
     progressDialog.exec();
+}
+
+
+void ParameterWindow::saveBRDF(){
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), "./brdf.binary", tr("BRDFs (*.binary)"));
+    brdf->saveAsBRDF(fileName.toStdString());
 }
 
 
@@ -295,22 +302,22 @@ void ParameterWindow::openBRDFFile( std::string filename, bool emitChanges )
     addBRDF(b, emitChanges);
 }
 
-void ParameterWindow::addBRDF(BRDFBase* brdf, bool emitChanges)
-{
-    // silently exit if nothing comes back
-    if( !brdf )
-        return;
-    
-    // add the new widget to the top
-    ParameterGroupWidget* pgw = addBRDFWidget( brdf );
-        
-    // if a BRDF is being soloed, we want to solo this new one instead
-    if( soloBRDFWidget )
-        soloBRDF( pgw, soloBRDFUsesColors );
 
-    // soloBRDF will emit the BRDF change, but if we don't call that we need to do it ourselves
-    else if( emitChanges )
-        emitBRDFListChanged();
+void ParameterWindow::addBRDF(BRDFBase* brdf, bool emitChanges) {
+    button_saveBRDF->setEnabled(brdf != nullptr);
+    // silently exit if nothing comes back
+    if (brdf) {
+        // add the new widget to the top
+        ParameterGroupWidget *pgw = addBRDFWidget(brdf);
+
+        // if a BRDF is being soloed, we want to solo this new one instead
+        if ( soloBRDFWidget ) {
+            soloBRDF(pgw, soloBRDFUsesColors);
+            // soloBRDF will emit the BRDF change, but if we don't call that we need to do it ourselves
+        } else if ( emitChanges ) {
+            emitBRDFListChanged();
+        }
+    }
 }
 
 

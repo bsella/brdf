@@ -1,8 +1,11 @@
 #ifndef BRDF_RECONSTRUCTED_H
 #define BRDF_RECONSTRUCTED_H
 
+#include <fstream>
+
 #include "BRDFMeasuredMERL.h"
 #include "Parametrisation.h"
+#include "MERLReader.h"
 /**
  * @file BRDFReconstructed.h
  */
@@ -29,13 +32,13 @@ namespace ChefDevr
         BRDFReconstructed(int _numBRDFSamples, const Scalar* _brdfData);
         
         /**
-        * @brief Save the BRDF in a file
+        * @brief Save a BRDF in a file
+        * @param path the path of file where the BRDF will be saved
         *
         * The file's format is the same as the MERL DataBase
         */
-        void saveAsBRDF();
+        void saveAsBRDF(const std::string& path) const;
 
-    private:
     };
 } // namespace ChefDevr
 
