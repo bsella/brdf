@@ -100,7 +100,12 @@ private slots:
     void resetButtonPushed();
     void soloButtonPushed();
     void soloColorsButtonPushed(); 
-    void saveParamsFileButtonPushed(); 
+    void saveParamsFileButtonPushed();
+
+    /**
+     * @brief Save a reconstructed BRDF inside a file.
+     */
+    void saveBRDF();
 
 private:
     void reload(bool resetToDefaults);

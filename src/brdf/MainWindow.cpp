@@ -61,13 +61,8 @@ MainWindow::MainWindow()
 {
     setWindowTitle( "BRDF Explorer 3000" );
 
-    QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
-    QAction* openBRDF = fileMenu->addAction( "Open BRDF..." );
-    QAction* chooseBRDF = fileMenu->addAction( "Choose BRDF from Map..." );
-    QAction* saveBRDF = fileMenu->addAction("Save reconstructed BRDF");
-
     // create the parameter window
-    paramWnd = new ParameterWindow(saveBRDF);
+    paramWnd = new ParameterWindow();
 
     viewer3D = new Plot3DWidget( this->windowHandle(), paramWnd->getBRDFList() );
     connect( paramWnd, SIGNAL(incidentDirectionChanged(float,float)), viewer3D, SLOT(incidentDirectionChanged(float,float)) );
@@ -157,11 +152,13 @@ MainWindow::MainWindow()
     setCentralWidget( new QWidget() ); // dummy central widget
     centralWidget()->hide();
 
-    saveBRDF->setEnabled(false);
+    QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
+    QAction* openBRDF = fileMenu->addAction( "Open BRDF..." );
+    QAction* chooseBRDF = fileMenu->addAction( "Choose BRDF from Map..." );
+
     openBRDF->setShortcut( QKeySequence("Ctrl+O") );
     connect( openBRDF, SIGNAL(triggered()), paramWnd, SLOT(openBRDFFromFile()) );
     connect( chooseBRDF, SIGNAL(triggered()), paramWnd, SLOT(openBRDFFromMap()) );
-    connect( saveBRDF, SIGNAL(triggered()), paramWnd, SLOT(saveBRDF()) );
     fileMenu->addAction( "&Quit", this, SLOT(close()), QKeySequence("Ctrl+Q") );
 
     QMenu* utilMenu = menuBar()->addMenu(tr("&Utilities"));

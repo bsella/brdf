@@ -60,6 +60,8 @@ infringement.
 #include "BRDFAnalytic.h"
 #include "ParameterWindow.h"
 #include "Paths.h"
+#include "ChefDevr/BRDFReconstructed.h"
+
 
 #define NUM_DRAW_COLORS 7
 float drawColors[NUM_DRAW_COLORS][3] =
@@ -173,6 +175,12 @@ ParameterGroupWidget::ParameterGroupWidget( ParameterWindow* pWindow, BRDFBase* 
     connect( saveAction, SIGNAL(triggered()), this, SLOT(saveParamsFileButtonPushed()) );
     
     optionsMenu->addSeparator();
+
+    auto *reconstructedBRDF = dynamic_cast<ChefDevr::BRDFReconstructed<Scalar> *>(brdf);
+    if (reconstructedBRDF != nullptr) {
+        QAction *button_saveBRDF = optionsMenu->addAction("Save BRDF");
+        connect(button_saveBRDF, SIGNAL(triggered()), this, SLOT(saveBRDF()));
+    }
     
     QAction* closeAction = optionsMenu->addAction( "Close BRDF" );
     QPixmap* closePixmap = new QPixmap((getImagesPath() + "closeSmall.png").c_str());
@@ -500,6 +508,14 @@ QColor ParameterGroupWidget::getDrawColor()
     c.setRgbF( brdfDrawColor[0], brdfDrawColor[1], brdfDrawColor[2] );
     return c;
 }
+
+
+void ParameterGroupWidget::saveBRDF(){
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), "./brdf.binary", tr("BRDFs (*.binary)"));
+    auto *reconstructedBRDF = dynamic_cast<ChefDevr::BRDFReconstructed<Scalar> *>(brdf);
+    reconstructedBRDF->saveAsBRDF(fileName.toStdString());
+}
+
 
 
 

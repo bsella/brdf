@@ -78,7 +78,7 @@ class ParameterWindow : public QWidget
     Q_OBJECT
 
 public:
-    ParameterWindow(QAction* button_saveBRDF);
+    ParameterWindow();
     ~ParameterWindow();
     
     std::vector<brdfPackage> getBRDFList();
@@ -103,11 +103,6 @@ public slots:
      * @brief Opens the map widget that allows choosing a BRDF from latent space coordinates
      */
     void openBRDFFromMap();
-
-    /**
-     * @brief Save a reconstructed BRDF inside a file.
-     */
-    void saveBRDF();
     
     void emitIncidentDirectionChanged();
     void emitGraphParametersChanged();
@@ -150,6 +145,5 @@ private:
     bool soloBRDFUsesColors;
 
     QFileDialog* fileDialog;
-    QAction* button_saveBRDF;
 };
 #endif

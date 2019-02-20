@@ -68,15 +68,14 @@ infringement.
 #include "ChefDevr/ReconstructionThread.h"
 #include "ChefDevr/waitingspinnerwidget.h"
 
-ParameterWindow::ParameterWindow(QAction* button_saveBRDF)
+ParameterWindow::ParameterWindow()
 				: incidentThetaWidget(NULL),
                   incidentPhiWidget(NULL),
                   cmdLayout(NULL),
 			      channelComboBox(NULL),
                   logPlotCheckbox(NULL), nDotLCheckbox(NULL),
                   soloBRDFWidget(NULL),
-                  soloBRDFUsesColors(false),
-                  button_saveBRDF{button_saveBRDF}
+                  soloBRDFUsesColors(false)
 {
 	theta = 0.785398163;
 	phi = 0.785398163;
@@ -235,16 +234,10 @@ void ParameterWindow::setBRDFModel () {
     progressDialog.exec();
 }
 
-
-void ParameterWindow::saveBRDF(){
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), "./brdf.binary", tr("BRDFs (*.binary)"));
-    brdf->saveAsBRDF(fileName.toStdString());
-}
-
-
 ParameterGroupWidget* ParameterWindow::addBRDFWidget( BRDFBase* b )
 {
     ParameterGroupWidget* pgw = new ParameterGroupWidget( this, b );
+
     connect( pgw,  SIGNAL(removeBRDFButtonPushed( ParameterGroupWidget* )),
              this, SLOT(removeBRDF( ParameterGroupWidget* )) );
     connect( pgw,  SIGNAL(enteringSoloMode(ParameterGroupWidget*,bool)),
@@ -304,7 +297,6 @@ void ParameterWindow::openBRDFFile( std::string filename, bool emitChanges )
 
 
 void ParameterWindow::addBRDF(BRDFBase* brdf, bool emitChanges) {
-    button_saveBRDF->setEnabled(brdf != nullptr);
     // silently exit if nothing comes back
     if (brdf) {
         // add the new widget to the top
