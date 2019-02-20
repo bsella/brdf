@@ -19,11 +19,12 @@ namespace ChefDevr
         tmp= new BRDFMapPoint;
         tmp->setPos(512,512);
         addItem(tmp);
-
+        /*
         QGraphicsSvgItem* isolines = new QGraphicsSvgItem("images/isolines.svg");
         isolines->setPos(-512,-512);
         isolines->setScale(1.07);
         addItem(isolines);
+        */
         // isolines.moveTo(22,-512);
         // isolines.cubicTo(22,-512, 98,-477, 113,-376);
     }

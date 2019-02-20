@@ -5,13 +5,13 @@
 
 namespace ChefDevr
 {    
+    static float current_scale;
     template <typename Scalar>
     BRDFMapView<Scalar>::BRDFMapView(
         const std::unique_ptr<BRDFReconstructionModel<Scalar>>& brdfModel,
         QWidget* parent):
-        
         QGraphicsView(parent)
-    {    
+    {
         scene = std::unique_ptr<BRDFMapScene>(new BRDFMapScene(4));
         setScene(scene.get());
         const auto& brdfNames(brdfModel->getBrdfNames());
@@ -20,6 +20,8 @@ namespace ChefDevr
             scene->addPoint(brdfNames[i], X[2*i], X[2*i+1]);
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setVerticalScrollBarPolicy  (Qt::ScrollBarAlwaysOff);
+        current_scale=1.f;
+        scene->setFontSize(20/current_scale);
     }
     
     template <typename Scalar>
@@ -54,7 +56,6 @@ namespace ChefDevr
 
     template <typename Scalar>
     void BRDFMapView<Scalar>::wheelEvent(QWheelEvent*e){
-        static float current_scale = 1.f;
         if(e->delta()>0){
             if(zoom<30){
                 scale(1.1,1.1);
