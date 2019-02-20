@@ -42,6 +42,7 @@ namespace ChefDevr
     }
     void BRDFMapScene::drawForeground (QPainter*p, const QRectF&){
         for(const auto& i : items()){
+            if(!(i->flags() & QGraphicsItem::ItemIgnoresTransformations)) continue;
             BRDFMapPoint* point= (BRDFMapPoint*)i;
             if(point==selected) continue;
             if(ctrlPressed || point == BRDFMapPoint::hover){
