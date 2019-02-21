@@ -111,9 +111,9 @@ bool BRDFMeasuredMERL::initBRDFData(const Scalar* brdf, const int nbPtrValues)
     brdfData = new float[ numBRDFSamples * 3 ];
     for( int i = 0; i < numBRDFSamples; ++i )
     {
-            brdfData[i*3 + 0] = brdf[i*3 + 0];
-            brdfData[i*3 + 1] = brdf[i*3 + 1];
-            brdfData[i*3 + 2] = brdf[i*3 + 2];
+            brdfData[i*3 + 0] = (float)brdf[i*3 + 0];
+            brdfData[i*3 + 1] = (float)brdf[i*3 + 1];
+            brdfData[i*3 + 2] = (float)brdf[i*3 + 2];
     }
     return true;
 }

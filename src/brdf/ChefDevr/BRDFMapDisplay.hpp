@@ -17,7 +17,7 @@ namespace ChefDevr
         const auto& brdfNames(brdfModel->getBrdfNames());
         const auto& X(brdfModel->getX());
         for(int i=0; i < brdfNames.size(); i++)
-            scene->addPoint(brdfNames[i], X[2*i], X[2*i+1]);
+            scene->addPoint(brdfNames[i], (float)X[2*i], (float)X[2*i+1]);
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setVerticalScrollBarPolicy  (Qt::ScrollBarAlwaysOff);
         current_scale=1.f;

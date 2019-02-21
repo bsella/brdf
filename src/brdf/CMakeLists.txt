@@ -65,6 +65,9 @@ include_directories(
    ${Qt5OpenGL_INCLUDES}
 		${CMAKE_CURRENT_SOURCE_DIR}/../../BRDF3000/src/Parametrisation/
    ${CMAKE_CURRENT_SOURCE_DIR}/../../BRDF3000/lib/Eigen/
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../BRDF3000/lib/boost/libs/multiprecision/include/boost/multiprecision
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../BRDF3000/lib/boost/libs/math/include/
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../BRDF3000/lib/boost/libs/numeric/odeint/include/
 )
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -75,5 +78,5 @@ add_executable(${APPLICATION}
 
 qt5_use_modules(${APPLICATION} Widgets OpenGL Svg)
 
-set(EXT_LIBS ${QT_LIBRARIES} ${OPENGL_LIBRARIES} "-lz")
+set(EXT_LIBS ${QT_LIBRARIES} ${OPENGL_LIBRARIES} quadmath gmp "-lz")
 target_link_libraries(${APPLICATION} ${EXT_LIBS})

@@ -40,8 +40,8 @@ namespace ChefDevr
         
         reconstructor = std::unique_ptr<BRDFRecType>(new BRDFRecType(K_minus1, X, meanBRDF, dim, brdf_filePaths));
         ProgressInterface::progressChanged(++progress);
-
-        /*for (unsigned int i(0); i < 5; ++i)
+        /*
+        for (unsigned int i(0); i < 5; ++i)
         {
             std::cout << "Reconstruction error for " << brdfNames[i] <<  " : " << reconstructor->reconstructionError(i) << std::endl;
         }
