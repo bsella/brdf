@@ -1,0 +1,37 @@
+digraph "BRDFReconstructionModel.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="BRDFReconstructionModel.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="BRDFReconstructionModel.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_reconstruction_model_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="BRDFMapDisplay.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_map_display_8h.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="BRDFMapDialog.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_map_dialog_8h.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="BRDFMapDialog.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_map_dialog_8cpp.html",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="BRDFMapDisplay.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_map_display_8cpp.html",tooltip=" "];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="ParameterWindow.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_parameter_window_8h.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="BRDFReconstructionModel.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_reconstruction_model_8cpp.html",tooltip=" "];
+  Node2 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="BRDFReconstructionModelSmall\lStorage.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_reconstruction_model_small_storage_8h.html",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node10 [label="BRDFReconstructionModelSmall\lStorage.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_reconstruction_model_small_storage_8cpp.html",tooltip=" "];
+  Node9 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node11 [label="BRDFReconstructionModelSmall\lStorage.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_reconstruction_model_small_storage_8hpp.html",tooltip=" "];
+  Node11 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node12 [label="BRDFReconstructionModelWithZ.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_reconstruction_model_with_z_8h.html",tooltip=" "];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node13 [label="BRDFReconstructionModelWith\lZ.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_reconstruction_model_with_z_8cpp.html",tooltip=" "];
+  Node12 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node14 [label="BRDFReconstructionModelWith\lZ.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_b_r_d_f_reconstruction_model_with_z_8hpp.html",tooltip=" "];
+  Node14 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+}

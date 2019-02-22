@@ -97,7 +97,9 @@ $(document).ready(function(){initNavTree('_parametrisation_8h.html','');});
 
 <p>Functions and classes related to the BRDF space parametrisation that are common to the Optimisation module and BRDF Explorer module.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
+<code>#include &quot;mathwrap.h&quot;</code><br />
 <code>#include &quot;Parametrisation.hpp&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for Parametrisation.h:</div>
@@ -108,6 +110,13 @@ $(document).ready(function(){initNavTree('_parametrisation_8h.html','');});
 <map name="_parametrisation_8h" id="_parametrisation_8h">
 <area shape="rect" href="types_8h.html" title="types.h" alt="" coords="17,80,79,107"/>
 </map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="_parametrisation_8h__dep__incl.png" border="0" usemap="#_parametrisation_8hdep" alt=""/></div>
 </div>
 </div>
 <p><a href="_parametrisation_8h_source.html">Go to the source code of this file.</a></p>
@@ -125,45 +134,29 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ad7004d690712afdecdfe4f48eddcf451"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_parametrisation_8h.html#ad7004d690712afdecdfe4f48eddcf451">MU_DEFAULT</a>&#160;&#160;&#160;Scalar(0.0001f)</td></tr>
+<tr class="memitem:ad7004d690712afdecdfe4f48eddcf451"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_parametrisation_8h.html#ad7004d690712afdecdfe4f48eddcf451">MU_DEFAULT</a>&#160;&#160;&#160;<a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a>(0.0001f)</td></tr>
 <tr class="separator:ad7004d690712afdecdfe4f48eddcf451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5369c38dfbf19b5b4a77d10cfdc36f7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_parametrisation_8h.html#a5369c38dfbf19b5b4a77d10cfdc36f7c">L_DEFAULT</a>&#160;&#160;&#160;Scalar(1.0f)</td></tr>
+<tr class="memitem:a5369c38dfbf19b5b4a77d10cfdc36f7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_parametrisation_8h.html#a5369c38dfbf19b5b4a77d10cfdc36f7c">L_DEFAULT</a>&#160;&#160;&#160;<a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a>(1.0f)</td></tr>
 <tr class="separator:a5369c38dfbf19b5b4a77d10cfdc36f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a002b2f4894492820fe708b1b7e7c5e70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_parametrisation_8h.html#a002b2f4894492820fe708b1b7e7c5e70">EPSILON</a>&#160;&#160;&#160;Scalar(0.00001f)</td></tr>
-<tr class="separator:a002b2f4894492820fe708b1b7e7c5e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a13ff4baef0481276d6b78f9d47297d0d"><td class="memTemplParams" colspan="2">template&lt;typename Scalar &gt; </td></tr>
-<tr class="memitem:a13ff4baef0481276d6b78f9d47297d0d"><td class="memTemplItemLeft" align="right" valign="top">Scalar&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_chef_devr.html#a13ff4baef0481276d6b78f9d47297d0d">ChefDevr::covariance</a> (Vector&lt; Scalar &gt; &amp;x1, Vector&lt; Scalar &gt; &amp;x2, const Scalar mu=<a class="el" href="_parametrisation_8h.html#ad7004d690712afdecdfe4f48eddcf451">MU_DEFAULT</a>, const Scalar l=<a class="el" href="_parametrisation_8h.html#a5369c38dfbf19b5b4a77d10cfdc36f7c">L_DEFAULT</a>)</td></tr>
-<tr class="memdesc:a13ff4baef0481276d6b78f9d47297d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Covariance function given in the research paper : A Versatile Parametrization for Measured Materials Manifold.  <a href="namespace_chef_devr.html#a13ff4baef0481276d6b78f9d47297d0d">More...</a><br /></td></tr>
-<tr class="separator:a13ff4baef0481276d6b78f9d47297d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a464db6c1ced4f8bd6b20bb4d6248cb7b"><td class="memTemplParams" colspan="2">template&lt;typename Scalar &gt; </td></tr>
-<tr class="memitem:a464db6c1ced4f8bd6b20bb4d6248cb7b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_chef_devr.html#a464db6c1ced4f8bd6b20bb4d6248cb7b">ChefDevr::centerMat</a> (Matrix&lt; Scalar &gt; &amp;Z)</td></tr>
-<tr class="memdesc:a464db6c1ced4f8bd6b20bb4d6248cb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centers matrix by sustracting mean to all columns.  <a href="namespace_chef_devr.html#a464db6c1ced4f8bd6b20bb4d6248cb7b">More...</a><br /></td></tr>
-<tr class="separator:a464db6c1ced4f8bd6b20bb4d6248cb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a349022012a8c5dc5757ba21824878766"><td class="memTemplParams" colspan="2">template&lt;typename Scalar &gt; </td></tr>
-<tr class="memitem:a349022012a8c5dc5757ba21824878766"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_chef_devr.html#a349022012a8c5dc5757ba21824878766">ChefDevr::computeCovVector</a> (Vector&lt; Scalar &gt; &amp;cov_vector, const Vector&lt; Scalar &gt; &amp;X, const unsigned int lv_num, const unsigned int dim, const unsigned int nb_data)</td></tr>
-<tr class="memdesc:a349022012a8c5dc5757ba21824878766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the covariance column vector for the lv_num'th latent variable.  <a href="namespace_chef_devr.html#a349022012a8c5dc5757ba21824878766">More...</a><br /></td></tr>
-<tr class="separator:a349022012a8c5dc5757ba21824878766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c4d013fb62a0ebda77f459876959b69"><td class="memTemplParams" colspan="2">template&lt;typename Scalar &gt; </td></tr>
+<tr class="memitem:a6c4d013fb62a0ebda77f459876959b69"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_chef_devr.html#a6c4d013fb62a0ebda77f459876959b69">ChefDevr::covariance</a> (const Vector&lt; <a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> &gt; &amp;x1, const Vector&lt; <a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> &gt; &amp;x2, const <a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> mu=<a class="el" href="_parametrisation_8h.html#ad7004d690712afdecdfe4f48eddcf451">MU_DEFAULT</a>, const <a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> l=<a class="el" href="_parametrisation_8h.html#a5369c38dfbf19b5b4a77d10cfdc36f7c">L_DEFAULT</a>)</td></tr>
+<tr class="memdesc:a6c4d013fb62a0ebda77f459876959b69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Covariance function given in the research paper : A Versatile Parametrization for Measured Materials Manifold.  <a href="namespace_chef_devr.html#a6c4d013fb62a0ebda77f459876959b69">More...</a><br /></td></tr>
+<tr class="separator:a6c4d013fb62a0ebda77f459876959b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9579ab224f4fc15d1ab2f409d9d8a4c6"><td class="memTemplParams" colspan="2">template&lt;typename Scalar &gt; </td></tr>
+<tr class="memitem:a9579ab224f4fc15d1ab2f409d9d8a4c6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_chef_devr.html#a9579ab224f4fc15d1ab2f409d9d8a4c6">ChefDevr::centerMat</a> (Matrix&lt; <a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> &gt; &amp;Z, RowVector&lt; <a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> &gt; &amp;meanBRDF)</td></tr>
+<tr class="memdesc:a9579ab224f4fc15d1ab2f409d9d8a4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centers matrix by subtracting mean to all columns.  <a href="namespace_chef_devr.html#a9579ab224f4fc15d1ab2f409d9d8a4c6">More...</a><br /></td></tr>
+<tr class="separator:a9579ab224f4fc15d1ab2f409d9d8a4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afae213bbb2131bfed0cbb814a319913c"><td class="memTemplParams" colspan="2">template&lt;typename Scalar &gt; </td></tr>
+<tr class="memitem:afae213bbb2131bfed0cbb814a319913c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_chef_devr.html#afae213bbb2131bfed0cbb814a319913c">ChefDevr::computeCovVector</a> (<a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> *cov_vector, const Vector&lt; <a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> &gt; &amp;X, const Vector&lt; <a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> &gt; &amp;coordRef, unsigned int dim, unsigned int nb_data)</td></tr>
+<tr class="memdesc:afae213bbb2131bfed0cbb814a319913c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the covariance column vector for the coordRef coordinates variable.  <a href="namespace_chef_devr.html#afae213bbb2131bfed0cbb814a319913c">More...</a><br /></td></tr>
+<tr class="separator:afae213bbb2131bfed0cbb814a319913c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Functions and classes related to the BRDF space parametrisation that are common to the Optimisation module and BRDF Explorer module. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a002b2f4894492820fe708b1b7e7c5e70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a002b2f4894492820fe708b1b7e7c5e70">&#9670;&nbsp;</a></span>EPSILON</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EPSILON&#160;&#160;&#160;Scalar(0.00001f)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a5369c38dfbf19b5b4a77d10cfdc36f7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5369c38dfbf19b5b4a77d10cfdc36f7c">&#9670;&nbsp;</a></span>L_DEFAULT</h2>
 
@@ -171,7 +164,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define L_DEFAULT&#160;&#160;&#160;Scalar(1.0f)</td>
+          <td class="memname">#define L_DEFAULT&#160;&#160;&#160;<a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a>(1.0f)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -185,7 +178,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MU_DEFAULT&#160;&#160;&#160;Scalar(0.0001f)</td>
+          <td class="memname">#define MU_DEFAULT&#160;&#160;&#160;<a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a>(0.0001f)</td>
         </tr>
       </table>
 </div><div class="memdoc">

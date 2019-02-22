@@ -1,10 +1,28 @@
 var searchData=
 [
-  ['saveasbrdf',['saveAsBRDF',['../class_chef_devr_1_1_b_r_d_f_reconstructed.html#a1b4190d32f0720d2e7e799eff2c22425',1,'ChefDevr::BRDFReconstructed']]],
+  ['saveasbrdf',['saveAsBRDF',['../class_chef_devr_1_1_b_r_d_f_reconstructed.html#a993df1520e6ad5f7738f97cc31632388',1,'ChefDevr::BRDFReconstructed']]],
+  ['scalar',['Scalar',['../_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce',1,'ParameterWindow.h']]],
+  ['scene',['scene',['../class_chef_devr_1_1_b_r_d_f_map_view.html#ae70272df81270f8b939c83caa0d73ef5',1,'ChefDevr::BRDFMapView']]],
+  ['selected',['selected',['../class_chef_devr_1_1_b_r_d_f_map_scene.html#a79597ebe1f717b6f96aa62fefa4f72c4',1,'ChefDevr::BRDFMapScene']]],
   ['setbrdfcolormask',['setBRDFColorMask',['../class_parameter_window.html#a6c6f60f49bd097ddc45872e8b58cc741',1,'ParameterWindow']]],
+  ['setbrdfmodel',['setBRDFModel',['../class_parameter_window.html#a4105df7ff5a98528e28f747946af6952',1,'ParameterWindow']]],
+  ['setcolor',['setColor',['../class_waiting_spinner_widget.html#a5bc33ab179119f510d556c214fe7ac9b',1,'WaitingSpinnerWidget']]],
+  ['setfontsize',['setFontSize',['../class_chef_devr_1_1_b_r_d_f_map_scene.html#a04205d114c381f1bb20ff4ed0322d1c5',1,'ChefDevr::BRDFMapScene']]],
+  ['setinnerradius',['setInnerRadius',['../class_waiting_spinner_widget.html#a4adc650895478217a5f28c72a9df1e53',1,'WaitingSpinnerWidget']]],
+  ['setlinelength',['setLineLength',['../class_waiting_spinner_widget.html#a797995d006da2e96b72daa959ddd274e',1,'WaitingSpinnerWidget']]],
+  ['setlinewidth',['setLineWidth',['../class_waiting_spinner_widget.html#a987a9c7234f83ca2665dd05f8d039e64',1,'WaitingSpinnerWidget']]],
+  ['setminimumtrailopacity',['setMinimumTrailOpacity',['../class_waiting_spinner_widget.html#ad4ad8fab83b1a60cf1dff78d6ad716d7',1,'WaitingSpinnerWidget']]],
+  ['setnumberoflines',['setNumberOfLines',['../class_waiting_spinner_widget.html#a29945c03eaf051081ea21f22dca6e97a',1,'WaitingSpinnerWidget']]],
+  ['setrevolutionspersecond',['setRevolutionsPerSecond',['../class_waiting_spinner_widget.html#addb2884587497961d78e24c50a2f1aba',1,'WaitingSpinnerWidget']]],
+  ['setroundness',['setRoundness',['../class_waiting_spinner_widget.html#a894f40b4623f9e7754c48e4478c23307',1,'WaitingSpinnerWidget']]],
+  ['setselectedpoint',['setSelectedPoint',['../class_chef_devr_1_1_b_r_d_f_map_scene.html#a4885ef713630b204ca296ef9a38db7c3',1,'ChefDevr::BRDFMapScene']]],
+  ['settext',['setText',['../class_waiting_spinner_widget.html#a25b9639b865d15610a499aaced705afe',1,'WaitingSpinnerWidget']]],
+  ['settrailfadepercentage',['setTrailFadePercentage',['../class_waiting_spinner_widget.html#af9ec791036d62a78b0f557346d1c0262',1,'WaitingSpinnerWidget']]],
   ['solobrdf',['soloBRDF',['../class_parameter_window.html#a6d2e50a54b30b33991556ac45b670358',1,'ParameterWindow']]],
   ['solobrdfusescolors',['soloBRDFUsesColors',['../class_parameter_window.html#a5c05a4418a024c0eaf22941ef65d225a',1,'ParameterWindow']]],
   ['solobrdfwidget',['soloBRDFWidget',['../class_parameter_window.html#a4332fb650b6699ceeb527115c0760d41',1,'ParameterWindow']]],
   ['solomodechanged',['soloModeChanged',['../class_parameter_window.html#a44c93e82554d52a276b03d9b7a79c4e0',1,'ParameterWindow']]],
-  ['spacefiller',['spaceFiller',['../class_parameter_window.html#a4dd5535d3098abed057ffb2164cc1713',1,'ParameterWindow']]]
+  ['spacefiller',['spaceFiller',['../class_parameter_window.html#a4dd5535d3098abed057ffb2164cc1713',1,'ParameterWindow']]],
+  ['start',['start',['../class_waiting_spinner_widget.html#ad0a0f83cf6adcf03e7c86626bfdaad6d',1,'WaitingSpinnerWidget']]],
+  ['stop',['stop',['../class_waiting_spinner_widget.html#a5fece0a70d836cc01bcfdebaf7b43cc4',1,'WaitingSpinnerWidget']]]
 ];

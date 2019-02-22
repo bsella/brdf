@@ -1,0 +1,12 @@
+digraph "ChefDevr::ProgressInterface::progressChanged"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="RL";
+  Node5 [label="ChefDevr::ProgressInterface\l::progressChanged",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="ChefDevr::BRDFReconstruction\lModelSmallStorage::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_chef_devr_1_1_b_r_d_f_reconstruction_model_small_storage.html#acd47de94d36f37e43bfe70af6dc8116b",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="ChefDevr::BRDFReconstruction\lModelWithZ::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_chef_devr_1_1_b_r_d_f_reconstruction_model_with_z.html#aa79fd305fc6cea580d4bdf355712e85e",tooltip=" "];
+}

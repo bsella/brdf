@@ -153,6 +153,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0935acf33bf6a8d1f2f640eae14b026b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae59f4d58842a54a269a92cddfcb36c28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#ae59f4d58842a54a269a92cddfcb36c28">openBRDFFiles</a> (std::vector&lt; std::string &gt;)</td></tr>
 <tr class="separator:ae59f4d58842a54a269a92cddfcb36c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c468b81046530a7b412ca7d8dc2a3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a49c468b81046530a7b412ca7d8dc2a3d">addBRDF</a> (BRDFBase *<a class="el" href="class_parameter_window.html#a6cd732e02f1321ced10fb319fc720047">brdf</a>, bool emitChanges=true)</td></tr>
+<tr class="separator:a49c468b81046530a7b412ca7d8dc2a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
@@ -171,6 +173,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a35695865727e2848319166c361677981"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c6f60f49bd097ddc45872e8b58cc741"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a6c6f60f49bd097ddc45872e8b58cc741">setBRDFColorMask</a> (brdfPackage &amp;pkg)</td></tr>
 <tr class="separator:a6c6f60f49bd097ddc45872e8b58cc741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4105df7ff5a98528e28f747946af6952"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a4105df7ff5a98528e28f747946af6952">setBRDFModel</a> ()</td></tr>
+<tr class="separator:a4105df7ff5a98528e28f747946af6952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -190,9 +194,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ab8373d1c64795c7e252234bf68c65432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dd5535d3098abed057ffb2164cc1713"><td class="memItemLeft" align="right" valign="top">QFrame *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a4dd5535d3098abed057ffb2164cc1713">spaceFiller</a></td></tr>
 <tr class="separator:a4dd5535d3098abed057ffb2164cc1713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7146f37b49c69560161483202c8740f"><td class="memItemLeft" align="right" valign="top">BRDFMapScene *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#aa7146f37b49c69560161483202c8740f">brdfMapScene</a></td></tr>
-<tr class="memdesc:aa7146f37b49c69560161483202c8740f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the map widget that allows choosing a BRDF from latent space coordinates.  <a href="#aa7146f37b49c69560161483202c8740f">More...</a><br /></td></tr>
-<tr class="separator:aa7146f37b49c69560161483202c8740f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb9cec75966cc62c1e6f22f592bd733d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_chef_devr_1_1_b_r_d_f_reconstruction_model.html">ChefDevr::BRDFReconstructionModel</a>&lt; <a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#acb9cec75966cc62c1e6f22f592bd733d">brdfModel</a></td></tr>
+<tr class="separator:acb9cec75966cc62c1e6f22f592bd733d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd732e02f1321ced10fb319fc720047"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_chef_devr_1_1_b_r_d_f_reconstructed.html">ChefDevr::BRDFReconstructed</a>&lt; <a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a6cd732e02f1321ced10fb319fc720047">brdf</a></td></tr>
+<tr class="separator:a6cd732e02f1321ced10fb319fc720047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73d2c1887b21a43f775278b7f547b347"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a73d2c1887b21a43f775278b7f547b347">theta</a></td></tr>
 <tr class="separator:a73d2c1887b21a43f775278b7f547b347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9ec7132117cabcaeb6baf5478abaf76"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#ae9ec7132117cabcaeb6baf5478abaf76">phi</a></td></tr>
@@ -207,8 +212,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5c05a4418a024c0eaf22941ef65d225a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d5e07e3c9faf784ecc4e0e052974d48"><td class="memItemLeft" align="right" valign="top">QFileDialog *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a0d5e07e3c9faf784ecc4e0e052974d48">fileDialog</a></td></tr>
 <tr class="separator:a0d5e07e3c9faf784ecc4e0e052974d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a970266a53858d28fbaa6b2d61bd21e99"><td class="memItemLeft" align="right" valign="top">BRDFReconstructionModel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameter_window.html#a970266a53858d28fbaa6b2d61bd21e99">brdfModel</a></td></tr>
-<tr class="separator:a970266a53858d28fbaa6b2d61bd21e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a95da188be6f3af06732764ea6f074e57"></a>
@@ -246,6 +249,34 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a49c468b81046530a7b412ca7d8dc2a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c468b81046530a7b412ca7d8dc2a3d">&#9670;&nbsp;</a></span>addBRDF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ParameterWindow::addBRDF </td>
+          <td>(</td>
+          <td class="paramtype">BRDFBase *&#160;</td>
+          <td class="paramname"><em>brdf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>emitChanges</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a35695865727e2848319166c361677981"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35695865727e2848319166c361677981">&#9670;&nbsp;</a></span>addBRDFWidget()</h2>
 
@@ -727,6 +758,31 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a4105df7ff5a98528e28f747946af6952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4105df7ff5a98528e28f747946af6952">&#9670;&nbsp;</a></span>setBRDFModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ParameterWindow::setBRDFModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6d2e50a54b30b33991556ac45b670358"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d2e50a54b30b33991556ac45b670358">&#9670;&nbsp;</a></span>soloBRDF</h2>
 
@@ -800,8 +856,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa7146f37b49c69560161483202c8740f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7146f37b49c69560161483202c8740f">&#9670;&nbsp;</a></span>brdfMapScene</h2>
+<a id="a6cd732e02f1321ced10fb319fc720047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd732e02f1321ced10fb319fc720047">&#9670;&nbsp;</a></span>brdf</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -810,7 +866,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">BRDFMapScene* ParameterWindow::brdfMapScene</td>
+          <td class="memname"><a class="el" href="class_chef_devr_1_1_b_r_d_f_reconstructed.html">ChefDevr::BRDFReconstructed</a>&lt;<a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a>&gt;* ParameterWindow::brdf</td>
         </tr>
       </table>
   </td>
@@ -820,12 +876,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Pointer to the map widget that allows choosing a BRDF from latent space coordinates. </p>
-
 </div>
 </div>
-<a id="a970266a53858d28fbaa6b2d61bd21e99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a970266a53858d28fbaa6b2d61bd21e99">&#9670;&nbsp;</a></span>brdfModel</h2>
+<a id="acb9cec75966cc62c1e6f22f592bd733d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9cec75966cc62c1e6f22f592bd733d">&#9670;&nbsp;</a></span>brdfModel</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -834,7 +888,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">BRDFReconstructionModel ParameterWindow::brdfModel</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_chef_devr_1_1_b_r_d_f_reconstruction_model.html">ChefDevr::BRDFReconstructionModel</a>&lt;<a class="el" href="_parameter_window_8h.html#ae52308b3630bba23d07d4fd32347bbce">Scalar</a>&gt; &gt; ParameterWindow::brdfModel</td>
         </tr>
       </table>
   </td>

@@ -1,0 +1,12 @@
+digraph "WaitingSpinnerWidget::minimumTrailOpacity"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="RL";
+  Node42 [label="WaitingSpinnerWidget\l::minimumTrailOpacity",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node42 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node43 [label="WaitingSpinnerWidget\l::setMinimumTrailOpacity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#ad4ad8fab83b1a60cf1dff78d6ad716d7",tooltip=" "];
+  Node43 -> Node44 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node44 [label="ChefDevr::WaitingDisplay\l::WaitingDisplay",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_chef_devr_1_1_waiting_display.html#aaf2fee02910d6d1f5a9e6f5a166e5ab1",tooltip=" "];
+}

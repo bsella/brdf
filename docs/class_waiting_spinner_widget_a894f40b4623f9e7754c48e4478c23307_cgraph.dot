@@ -1,0 +1,10 @@
+digraph "WaitingSpinnerWidget::setRoundness"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node93 [label="WaitingSpinnerWidget\l::setRoundness",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node93 -> Node94 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node94 [label="WaitingSpinnerWidget\l::roundness",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#a2ceb91dfdafcd41b99f04aa2b4b81786",tooltip=" "];
+}

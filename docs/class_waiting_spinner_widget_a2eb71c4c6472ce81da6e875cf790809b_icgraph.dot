@@ -1,0 +1,22 @@
+digraph "WaitingSpinnerWidget::updateSize"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="RL";
+  Node116 [label="WaitingSpinnerWidget\l::updateSize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node116 -> Node117 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node117 [label="WaitingSpinnerWidget\l::initialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#a885516e19838042bd79042f854452a3d",tooltip=" "];
+  Node117 -> Node118 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node118 [label="WaitingSpinnerWidget\l::WaitingSpinnerWidget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#a5207a447314b9b3505177fec483f5608",tooltip=" "];
+  Node116 -> Node119 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node119 [label="WaitingSpinnerWidget\l::setLineLength",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#a797995d006da2e96b72daa959ddd274e",tooltip=" "];
+  Node119 -> Node120 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node120 [label="ChefDevr::WaitingDisplay\l::WaitingDisplay",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_chef_devr_1_1_waiting_display.html#aaf2fee02910d6d1f5a9e6f5a166e5ab1",tooltip=" "];
+  Node116 -> Node121 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node121 [label="WaitingSpinnerWidget\l::setLineWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#a987a9c7234f83ca2665dd05f8d039e64",tooltip=" "];
+  Node121 -> Node120 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node116 -> Node122 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node122 [label="WaitingSpinnerWidget\l::setInnerRadius",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#a4adc650895478217a5f28c72a9df1e53",tooltip=" "];
+  Node122 -> Node120 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+}

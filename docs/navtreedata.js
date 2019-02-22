@@ -29,6 +29,7 @@ var NAVTREE =
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ]
       ] ]
     ] ],
@@ -46,6 +47,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -54,7 +56,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_b_r_d_f_map_point_8h.html"
+"_b_r_d_f_map_dialog_8cpp.html",
+"index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

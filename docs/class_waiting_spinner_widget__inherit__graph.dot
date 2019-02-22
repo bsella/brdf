@@ -1,0 +1,9 @@
+digraph "WaitingSpinnerWidget"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node0 [label="{WaitingSpinnerWidget\n|- _color\l- _roundness\l- _minimumTrailOpacity\l- _trailFadePercentage\l- _revolutionsPerSecond\l- _numberOfLines\l- _lineLength\l- _lineWidth\l- _innerRadius\l- _timer\l- _centerOnParent\l- _disableParentWhenSpinning\l- _currentCounter\l- _isSpinning\l|+ WaitingSpinnerWidget()\l+ WaitingSpinnerWidget()\l+ setColor()\l+ setRoundness()\l+ setMinimumTrailOpacity()\l+ setTrailFadePercentage()\l+ setRevolutionsPerSecond()\l+ setNumberOfLines()\l+ setLineLength()\l+ setLineWidth()\land 12 more...\l+ start()\l+ stop()\l# paintEvent()\l- initialize()\l- updateSize()\l- updateTimer()\l- updatePosition()\l- WaitingSpinnerWidget()\l- operator=()\l- lineCountDistanceFromPrimary()\l- currentLineColor()\l- rotate()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node1 [label="{QWidget\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

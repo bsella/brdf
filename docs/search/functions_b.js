@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['paint',['paint',['../class_chef_devr_1_1_b_r_d_f_map_point.html#ac3bed3cd53a4355f1812fce25caff7f7',1,'ChefDevr::BRDFMapPoint']]],
-  ['parameterwindow',['ParameterWindow',['../class_parameter_window.html#a95da188be6f3af06732764ea6f074e57',1,'ParameterWindow']]]
+  ['name',['name',['../class_chef_devr_1_1_b_r_d_f_map_point.html#abfae4cfdd5152df62f1249f2ab8be4c1',1,'ChefDevr::BRDFMapPoint']]],
+  ['numberoflines',['numberOfLines',['../class_waiting_spinner_widget.html#af6a17bce3bc7081c1e0297e6249576e0',1,'WaitingSpinnerWidget']]]
 ];

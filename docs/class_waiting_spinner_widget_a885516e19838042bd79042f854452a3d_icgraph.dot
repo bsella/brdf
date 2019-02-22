@@ -1,0 +1,10 @@
+digraph "WaitingSpinnerWidget::initialize"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="RL";
+  Node28 [label="WaitingSpinnerWidget\l::initialize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node28 -> Node29 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node29 [label="WaitingSpinnerWidget\l::WaitingSpinnerWidget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#a5207a447314b9b3505177fec483f5608",tooltip=" "];
+}

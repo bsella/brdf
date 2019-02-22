@@ -92,9 +92,17 @@ $(document).ready(function(){initNavTree('_b_r_d_f_reconstruction_model_8h.html'
 <div class="title">BRDFReconstructionModel.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &quot;MERLReader.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="_b_r_d_f_reconstructed_8h_source.html">BRDFReconstructed.h</a>&quot;</code><br />
-<code>#include &quot;../../BRDF3000/src/Parametrisation/Parametrisation.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_parametrisation_8h_source.html">Parametrisation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
+<code>#include &lt;QThread&gt;</code><br />
+<code>#include &lt;QObject&gt;</code><br />
+<code>#include &quot;<a class="el" href="_b_r_d_f_reconstruction_model_8hpp_source.html">BRDFReconstructionModel.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for BRDFReconstructionModel.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -121,8 +129,14 @@ $(document).ready(function(){initNavTree('_b_r_d_f_reconstruction_model_8h.html'
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chef_devr_1_1_progress_interface.html">ChefDevr::ProgressInterface</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chef_devr_1_1_b_r_d_f_reconstruction_model.html">ChefDevr::BRDFReconstructionModel&lt; Scalar &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class that allows reconstruction of BRDFs in the BRDF Explorer format.  <a href="class_chef_devr_1_1_b_r_d_f_reconstruction_model.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chef_devr_1_1_b_r_d_f_reconstruction_model_1_1_b_r_d_f_reconstruction_model_error.html">ChefDevr::BRDFReconstructionModel&lt; Scalar &gt;::BRDFReconstructionModelError</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chef_devr_1_1_b_r_d_f_model_init_thread.html">ChefDevr::BRDFModelInitThread&lt; Scalar &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>

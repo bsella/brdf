@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['mouspressevent',['mousPressEvent',['../class_chef_devr_1_1_b_r_d_f_map_scene.html#a527997279ae3d4cd40354c05656ac974',1,'ChefDevr::BRDFMapScene']]],
-  ['mousreleaseevent',['mousReleaseEvent',['../class_chef_devr_1_1_b_r_d_f_map_scene.html#adaae2dc9d03d2990858a7c79ee29110b',1,'ChefDevr::BRDFMapScene']]]
+  ['linecountdistancefromprimary',['lineCountDistanceFromPrimary',['../class_waiting_spinner_widget.html#a144cdce01e10daeefb91846b7d7328a5',1,'WaitingSpinnerWidget']]],
+  ['linelength',['lineLength',['../class_waiting_spinner_widget.html#aa716528e1094789337adc5d291c69747',1,'WaitingSpinnerWidget']]],
+  ['linewidth',['lineWidth',['../class_waiting_spinner_widget.html#a6c42700d650379cffd704199c63c4f28',1,'WaitingSpinnerWidget']]]
 ];

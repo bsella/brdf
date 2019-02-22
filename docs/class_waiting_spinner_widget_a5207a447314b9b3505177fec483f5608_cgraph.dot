@@ -1,0 +1,16 @@
+digraph "WaitingSpinnerWidget::WaitingSpinnerWidget"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="WaitingSpinnerWidget\l::WaitingSpinnerWidget",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node1 [label="WaitingSpinnerWidget\l::initialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#a885516e19838042bd79042f854452a3d",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="WaitingSpinnerWidget\l::rotate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#aacb453453fd98625eb38e021de72070f",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="WaitingSpinnerWidget\l::updateSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#a2eb71c4c6472ce81da6e875cf790809b",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="WaitingSpinnerWidget\l::updateTimer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_waiting_spinner_widget.html#a4a72ed38feadc151679c1b3ee7df8f99",tooltip=" "];
+}

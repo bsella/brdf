@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['k_5fminus1',['K_minus1',['../class_chef_devr_1_1_b_r_d_f_reconstruction_model.html#a76d0921c08ed3c8959fd882d48600bf5',1,'ChefDevr::BRDFReconstructionModel::K_minus1()'],['../class_chef_devr_1_1_b_r_d_f_reconstructor.html#a65cfe81f42ec3c0b08b3e20f406f7e4f',1,'ChefDevr::BRDFReconstructor::K_minus1()']]]
+  ['incidentphiwidget',['incidentPhiWidget',['../class_parameter_window.html#aa48b0e6f90454720e8d8932c9a5e5f1c',1,'ParameterWindow']]],
+  ['incidentthetawidget',['incidentThetaWidget',['../class_parameter_window.html#a4628c75733493a39c59bb80460bfe804',1,'ParameterWindow']]]
 ];

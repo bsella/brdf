@@ -1,12 +1,15 @@
 var class_chef_devr_1_1_b_r_d_f_reconstructor =
 [
-    [ "BRDFReconstructor", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a4e82466cb5906ba46092b92bc5323c59", null ],
-    [ "~BRDFReconstructor", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a8943b55072cbcf99bd09553917c1ce68", null ],
-    [ "reconstruct", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#ac71d85c4f5647fad9bbb79171e81a578", null ],
-    [ "dim", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a783f8f505bf654ebac42998f2239a684", null ],
-    [ "K_minus1", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a65cfe81f42ec3c0b08b3e20f406f7e4f", null ],
+    [ "BRDFReconstructor", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a343a7aa9fe94c2ec051c68cdff2ac3f0", null ],
+    [ "~BRDFReconstructor", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a4cef6e174ab0c7728128de983d02b430", null ],
+    [ "getBRDFCoeffNb", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a632da6bbc914791177944cf00f6ea5ea", null ],
+    [ "getLatentDim", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#ada12787c3d79feb4bc8a36e74d093480", null ],
+    [ "reconstruct", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#aa06fb7b33e413342fba43cc9dc8f3b48", null ],
+    [ "reconstructionError", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a743ae5821bf5d1f7ec6fa64a60220f15", null ],
     [ "l", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a1d8c5a67ec486806ba2e49f09831577c", null ],
+    [ "latentDim", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a84c7138f8a5bf6aaae2b0e8ed32bb7b4", null ],
+    [ "meanBRDF", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#aa6bcfa043dd70a8c58411af3d3ba1920", null ],
     [ "mu", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a3c62e143ab28b32e7f6c7fed83980f07", null ],
-    [ "X", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#ab9bfd8c7c205aa065bca5019a62f0e7c", null ],
-    [ "Z", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#ab6ddef1ac33c9d1c9f53f0fd5092d24d", null ]
+    [ "nb_data", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#a2e705b55ccdb9994f080c5f4e0e22ac1", null ],
+    [ "X", "class_chef_devr_1_1_b_r_d_f_reconstructor.html#ab9bfd8c7c205aa065bca5019a62f0e7c", null ]
 ];
