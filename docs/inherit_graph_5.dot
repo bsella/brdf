@@ -4,7 +4,9 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
   node [fontname="FreeSans",fontsize="10",shape=record];
   rankdir="LR";
-  Node24 [label="BRDFMeasuredMERL",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
-  Node24 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node0 [label="ChefDevr::BRDFReconstructed\l\< Scalar \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_chef_devr_1_1_b_r_d_f_reconstructed.html",tooltip="A reconstructed BRDF, in the original space Manipulable with BRDF Explorer."];
+  Node7 [label="QThread",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node0 [label="ChefDevr::BRDFModelInitThread\l\< Scalar \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_chef_devr_1_1_b_r_d_f_model_init_thread.html",tooltip=" "];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="RThread\< Scalar \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_r_thread.html",tooltip=" "];
 }

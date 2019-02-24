@@ -1,8 +1,10 @@
 var NAVTREEINDEX1 =
 {
+"globals_type.html":[2,1,1],
+"hierarchy.html":[1,2],
 "index.html":[],
-"namespace_chef_devr.html":[0,0,0],
 "namespace_chef_devr.html":[1,0,0],
+"namespace_chef_devr.html":[0,0,0],
 "namespacemembers.html":[0,1,0],
 "namespacemembers_func.html":[0,1,1],
 "namespacemembers_type.html":[0,1,3],

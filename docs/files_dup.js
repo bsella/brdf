@@ -2,7 +2,8 @@ var files_dup =
 [
     [ "BRDFMapDialog.cpp", "_b_r_d_f_map_dialog_8cpp.html", null ],
     [ "BRDFMapDialog.h", "_b_r_d_f_map_dialog_8h.html", [
-      [ "BRDFMapDialog", "class_chef_devr_1_1_b_r_d_f_map_dialog.html", "class_chef_devr_1_1_b_r_d_f_map_dialog" ]
+      [ "BRDFMapDialog", "class_chef_devr_1_1_b_r_d_f_map_dialog.html", "class_chef_devr_1_1_b_r_d_f_map_dialog" ],
+      [ "BRDFMapDialogException", "class_chef_devr_1_1_b_r_d_f_map_dialog_1_1_b_r_d_f_map_dialog_exception.html", "class_chef_devr_1_1_b_r_d_f_map_dialog_1_1_b_r_d_f_map_dialog_exception" ]
     ] ],
     [ "BRDFMapDialog.hpp", "_b_r_d_f_map_dialog_8hpp.html", null ],
     [ "BRDFMapDisplay.cpp", "_b_r_d_f_map_display_8cpp.html", "_b_r_d_f_map_display_8cpp" ],

@@ -34,6 +34,7 @@ var hierarchy =
       [ "WaitingSpinnerWidget", "class_waiting_spinner_widget.html", null ]
     ] ],
     [ "runtime_error", null, [
+      [ "ChefDevr::BRDFMapDialog< Scalar >::BRDFMapDialogException", "class_chef_devr_1_1_b_r_d_f_map_dialog_1_1_b_r_d_f_map_dialog_exception.html", null ],
       [ "ChefDevr::BRDFReconstructionModel< Scalar >::BRDFReconstructionModelError", "class_chef_devr_1_1_b_r_d_f_reconstruction_model_1_1_b_r_d_f_reconstruction_model_error.html", null ]
     ] ]
 ];

@@ -9,6 +9,7 @@ var searchData=
   ['brdfmapdialog_2ecpp',['BRDFMapDialog.cpp',['../_b_r_d_f_map_dialog_8cpp.html',1,'']]],
   ['brdfmapdialog_2eh',['BRDFMapDialog.h',['../_b_r_d_f_map_dialog_8h.html',1,'']]],
   ['brdfmapdialog_2ehpp',['BRDFMapDialog.hpp',['../_b_r_d_f_map_dialog_8hpp.html',1,'']]],
+  ['brdfmapdialogexception',['BRDFMapDialogException',['../class_chef_devr_1_1_b_r_d_f_map_dialog_1_1_b_r_d_f_map_dialog_exception.html',1,'ChefDevr::BRDFMapDialog&lt; Scalar &gt;::BRDFMapDialogException'],['../class_chef_devr_1_1_b_r_d_f_map_dialog_1_1_b_r_d_f_map_dialog_exception.html#a14d5aa113e07696c89908092c864bb21',1,'ChefDevr::BRDFMapDialog::BRDFMapDialogException::BRDFMapDialogException()']]],
   ['brdfmapdisplay_2ecpp',['BRDFMapDisplay.cpp',['../_b_r_d_f_map_display_8cpp.html',1,'']]],
   ['brdfmapdisplay_2eh',['BRDFMapDisplay.h',['../_b_r_d_f_map_display_8h.html',1,'']]],
   ['brdfmapdisplay_2ehpp',['BRDFMapDisplay.hpp',['../_b_r_d_f_map_display_8hpp.html',1,'']]],
@@ -37,5 +38,5 @@ var searchData=
   ['brdfreconstructionmodelwithz_2ecpp',['BRDFReconstructionModelWithZ.cpp',['../_b_r_d_f_reconstruction_model_with_z_8cpp.html',1,'']]],
   ['brdfreconstructionmodelwithz_2eh',['BRDFReconstructionModelWithZ.h',['../_b_r_d_f_reconstruction_model_with_z_8h.html',1,'']]],
   ['brdfreconstructionmodelwithz_2ehpp',['BRDFReconstructionModelWithZ.hpp',['../_b_r_d_f_reconstruction_model_with_z_8hpp.html',1,'']]],
-  ['brdfreconstructor',['BRDFReconstructor',['../class_chef_devr_1_1_b_r_d_f_reconstructor.html',1,'ChefDevr::BRDFReconstructor&lt; Scalar &gt;'],['../class_chef_devr_1_1_b_r_d_f_reconstructor.html#a343a7aa9fe94c2ec051c68cdff2ac3f0',1,'ChefDevr::BRDFReconstructor::BRDFReconstructor()'],['../class_chef_devr_1_1_b_r_d_f_reconstruction_model.html#add276c9c0ec81d90eea0209e54d884ea',1,'ChefDevr::BRDFReconstructionModel::brdfReconstructor()']]]
+  ['brdfreconstructor',['BRDFReconstructor',['../class_chef_devr_1_1_b_r_d_f_reconstructor.html',1,'ChefDevr::BRDFReconstructor&lt; Scalar &gt;'],['../class_chef_devr_1_1_b_r_d_f_reconstruction_model.html#add276c9c0ec81d90eea0209e54d884ea',1,'ChefDevr::BRDFReconstructionModel::brdfReconstructor()'],['../class_chef_devr_1_1_b_r_d_f_reconstructor.html#a343a7aa9fe94c2ec051c68cdff2ac3f0',1,'ChefDevr::BRDFReconstructor::BRDFReconstructor()']]]
 ];
