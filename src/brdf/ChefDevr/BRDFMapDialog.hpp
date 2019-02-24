@@ -42,6 +42,6 @@ namespace ChefDevr{
 		//	return diag.scene->selected->pos();
 		if(diag.exec() && diag.view->scene->selected)
 			return diag.view->scene->selected->pos()/512.f*4;
-		return QPointF(10,0);
+		throw BRDFMapDialogException("No point were selected");
 	}
 }

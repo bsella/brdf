@@ -1,10 +1,11 @@
 #ifndef BRDFDIALOG_H
 #define BRDFDIALOG_H
 
+#include <memory> 
+#include <stdexcept>
 #include <QDialog>
 #include "BRDFMapDisplay.h"
 #include "BRDFReconstructionModel.h"
-#include <memory> 
 
 namespace ChefDevr{
     
@@ -18,6 +19,13 @@ namespace ChefDevr{
         
 		~BRDFMapDialog()override;
 		static QPointF getBRDFPos(const std::unique_ptr<BRDFReconstructionModel<Scalar>>& brdfModel);
+        
+        class BRDFMapDialogException : public std::runtime_error
+        {
+        public :
+            explicit BRDFMapDialogException(const std::string& msg) : std::runtime_error(msg){}
+        };
+        
 	private:
 		std::unique_ptr<BRDFMapView<Scalar>> view;
 	};

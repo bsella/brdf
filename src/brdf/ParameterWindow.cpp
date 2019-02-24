@@ -178,10 +178,9 @@ void ParameterWindow::openBRDFFromMap(){
         setBRDFModel();
     }
 
-    QPointF p = ChefDevr::BRDFMapDialog<Scalar>::getBRDFPos(brdfModel);
-
-    if (p.x() < 8.)
+    try
     {
+        QPointF p = ChefDevr::BRDFMapDialog<Scalar>::getBRDFPos(brdfModel);
         ChefDevr::WaitingDisplay waitingDisplay;
         RThread<Scalar> reconstructionThread(brdf, brdfModel.get(), p);
         connect(&reconstructionThread, SIGNAL(finished()), &waitingDisplay, SLOT(accept()), Qt::QueuedConnection);
@@ -190,6 +189,8 @@ void ParameterWindow::openBRDFFromMap(){
         reconstructionThread.wait();
         addBRDF(brdf, true);
     }
+    catch (const ChefDevr::BRDFMapDialog<Scalar>::BRDFMapDialogException& e){}
+
 }
 
 
@@ -202,7 +203,7 @@ void ParameterWindow::setBRDFModel () {
     dialog.setIcon(QMessageBox::Question);
     dialog.setText("Please choose a storage policy");
     dialog.setInformativeText("Economic :\nLow memory usage\nSlow initial data loading time and BRDFs reconstruction.\n\n"
-                              "Performant :\nHigh memory usage (7.5GB)\nFast initial data loading time and BRDFs reconstruction.");
+                              "Performant :\nHigh memory usage (13GB)\nFast initial data loading time and BRDFs reconstruction.");
     QPushButton *smallRam = dialog.addButton(tr("Economic"), QMessageBox::ActionRole);
     dialog.addButton(tr("Performant"), QMessageBox::ActionRole);
 
@@ -213,6 +214,7 @@ void ParameterWindow::setBRDFModel () {
     auto * progressBar = new QProgressBar();
     QLabel* label = new QLabel("Data is loading, please wait...");
     QDialog progressDialog;
+    progressDialog.setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
     auto * layout = new QFormLayout();
     layout->addWidget(label);
     layout->addWidget(progressBar);
